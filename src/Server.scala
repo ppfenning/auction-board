@@ -17,6 +17,7 @@ object Views:
     val nominations = Nominate.suggest(playerViews, teamViews, state.myTeam, plan)
     View(
       inflation = Pricing.inflation(players, state, league),
+      premium = Pricing.premium(players, state),
       moneyLeft = Pricing.moneyLeft(state, league),
       valueLeft = Pricing.valueLeft(players, state, league),
       myTeam = state.myTeam,

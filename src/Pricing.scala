@@ -32,12 +32,27 @@ object Pricing:
     val clamped = math.min(2.0, math.max(0.5, raw))
     math.round(clamped * 100).toDouble / 100
 
-  /** 1.10 for tiers 1-2, 1.05 for tier 3, 1.00 for tiers 4-5, 0.90 otherwise. */
+  /** 1.20 for tiers 1-2, 1.10 for tier 3, 1.00 for tiers 4-5, 0.90 otherwise.
+    * Raised from 1.10/1.05 after the mock rooms (src/Mock.scala): against
+    * nine noisy bidders a cap at value+10% loses nearly every star and
+    * leaves the money unspent, which cost more rooms than overpaying did. */
   def tierCap(tier: Int): Double =
-    if tier <= 2 then 1.10
-    else if tier == 3 then 1.05
+    if tier <= 2 then 1.20
+    else if tier == 3 then 1.10
     else if tier <= 5 then 1.00
     else 0.90
+
+  /** What the room has actually paid over the sheet so far: the sum of
+    * prices divided by the sum of the sold players' effective values, 1.0
+    * before the first sale, clamped to [0.5, 2.0], two decimals. Above the
+    * tier cap it means the sheet is wrong for THIS room, and a bidder who
+    * keeps the sheet's caps ends with money nobody will take. */
+  def premium(players: Vector[Player], state: DraftState): Double =
+    val byId = players.map(p => p.id -> p).toMap
+    val sold = state.picks.flatMap(pick => byId.get(pick.playerId).map(p => (pick.price, state.effectiveValue(p))))
+    val value = sold.map(_._2).sum
+    val raw = if value == 0 then 1.0 else sold.map(_._1).sum.toDouble / value
+    math.round(math.min(2.0, math.max(0.5, raw)) * 100) / 100.0
 
   /** max(1, round(value * inflation * 0.90)) */
   def target(value: Int, inflation: Double): Int =

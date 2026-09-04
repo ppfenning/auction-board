@@ -62,8 +62,8 @@ class PricingTest extends munit.FunSuite:
   }
 
   test("tierCap by tier") {
-    assertEquals(Pricing.tierCap(1), 1.10)
-    assertEquals(Pricing.tierCap(3), 1.05)
+    assertEquals(Pricing.tierCap(1), 1.20)
+    assertEquals(Pricing.tierCap(3), 1.10)
     assertEquals(Pricing.tierCap(4), 1.00)
     assertEquals(Pricing.tierCap(6), 0.90)
   }
@@ -71,7 +71,7 @@ class PricingTest extends munit.FunSuite:
   test("target and maxBid rounding, with the $1 floor") {
     assertEquals(Pricing.target(100, 1.0), 90)
     assertEquals(Pricing.target(1, 0.5), 1)
-    assertEquals(Pricing.maxBid(100, 1, 1.0), 110)
+    assertEquals(Pricing.maxBid(100, 1, 1.0), 120)
     assertEquals(Pricing.maxBid(1, 6, 0.5), 1)
     // 5 * 1.5 * 0.90 = 6.75: rounds to 7, truncation would give 6
     assertEquals(Pricing.target(5, 1.5), 7)
@@ -102,7 +102,7 @@ class PricingTest extends munit.FunSuite:
 
     val v1 = views.find(_.id == p1.id).get
     assertEquals(v1.target, 45) // round(60 * 0.84 * 0.90) = round(45.36)
-    assertEquals(v1.max, 55) // round(60 * 0.84 * 1.10), tier 1 = round(55.44)
+    assertEquals(v1.max, 60) // round(60 * 0.84 * 1.20), tier 1 = round(60.48)
 
     val v3 = views.find(_.id == p3.id).get
     assertEquals(v3.target, 30) // round(40 * 0.84 * 0.90) = round(30.24)
@@ -129,9 +129,9 @@ class PricingTest extends munit.FunSuite:
     // inflation here is 1945 / 151, clamped to 2.0
     assertEquals(Pricing.inflation(players, state, League.espn10), 2.0)
     assertEquals(v1.target, 108) // round(60 * 2.0 * 0.90)
-    assertEquals(v1.max, 132) // round(60 * 2.0 * 1.10), tier 1
+    assertEquals(v1.max, 144) // round(60 * 2.0 * 1.20), tier 1
     assertEquals(v2.target, 144) // round(80 * 2.0 * 0.90)
-    assertEquals(v2.max, 168) // round(80 * 2.0 * 1.05), tier 3
+    assertEquals(v2.max, 176) // round(80 * 2.0 * 1.10), tier 3
 
     val v5 = views.find(_.id == p5.id).get
     assertEquals(v5.value, 0)

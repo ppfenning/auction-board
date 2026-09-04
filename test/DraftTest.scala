@@ -215,5 +215,6 @@ class DraftTest extends munit.FunSuite:
     assertEquals(lines.find(_.slot == "RB1").get.actual, Some(10))
     assertEquals(lines.find(_.slot == "RB1").get.name, Some(rb1.name))
     assertEquals(lines.find(_.slot == "WR1").get.actual, None)
-    assertEquals(planRemaining, 87)
+    assertEquals(planRemaining, lines.filter(_.name.isEmpty).map(_.planned).sum)
+    assert(planRemaining < Plan.default.map(_.planned).sum)
   }

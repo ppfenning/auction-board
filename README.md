@@ -42,3 +42,12 @@ docs/strategy.md rendered in place.
 
 `pytest -q` runs the same suite through `tests/test_scala.py`, for tooling
 that expects pytest.
+
+## Mock auctions
+
+    scala-cli run . --main-class auction.Mock -- --n 300 --seed 1
+
+Nine simulated rivals with randomised pricing bid against the strategy as
+written; the report ranks my lineup among the ten teams under each bidding
+policy and prints three sample rooms. Results and the model are in
+docs/mocks.md.

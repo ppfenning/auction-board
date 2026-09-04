@@ -41,9 +41,11 @@ object Page:
       body(
         header(
           div(cls := "stat")("inflation", b(id := "st-inflation")("1.00")),
+          div(cls := "stat")("room premium", b(id := "st-premium")("1.00")),
           div(cls := "stat")("my $", b(id := "st-remaining")("200")),
           div(cls := "stat")("my max bid", b(id := "st-maxbid")("184")),
           div(cls := "stat")("plan left", b(id := "st-plan")("200")),
+          div(cls := "stat")("surplus", b(id := "st-surplus")("0")),
           div(cls := "stat")("open slots", b(id := "st-slots")("17")),
           div(cls := "stat")("room $ left", b(id := "st-room")("2000")),
           nav(

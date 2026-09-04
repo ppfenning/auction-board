@@ -129,11 +129,22 @@ function renderAll() {
   if (!view) return;
   const me = myTeam();
   document.getElementById("st-inflation").textContent = view.inflation.toFixed(2);
+  // Prices paid over sheet value so far. Above 1.20 the room is hotter than
+  // the tier-1 cap: raise starter caps to it rather than sit on money.
+  const premiumEl = document.getElementById("st-premium");
+  premiumEl.textContent = view.premium.toFixed(2);
+  premiumEl.classList.toggle("over", view.premium > 1.2);
   document.getElementById("st-remaining").textContent = me.remaining;
   document.getElementById("st-maxbid").textContent = me.maxBid;
   const plan = document.getElementById("st-plan");
   plan.textContent = view.planRemaining;
   plan.classList.toggle("over", view.planRemaining > me.remaining);
+  // Money the plan has no home for. The strategy's rule: add it to the cap
+  // of the next starter you bid on, never let it reach the endgame unspent.
+  const surplus = Math.max(0, me.remaining - view.planRemaining);
+  const surplusEl = document.getElementById("st-surplus");
+  surplusEl.textContent = surplus;
+  surplusEl.classList.toggle("under", surplus > 0);
   document.getElementById("st-slots").textContent = me.slotsOpen;
   document.getElementById("st-room").textContent = view.moneyLeft;
   renderBoard();

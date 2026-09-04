@@ -93,23 +93,27 @@ object DraftState:
 final case class PlanLine(slot: String, planned: Int) derives ReadWriter
 
 object Plan:
+  /** Starter-heavy: $186 on the ten starters, $1 per bench spot. The mock
+    * rooms (src/Mock.scala) ranked this plan 4.5th of 10 by lineup value
+    * against 7.3rd for a $27-bench plan; unspent money loses rooms, and
+    * bench value never plays. Bench upside is bought from surplus. */
   val default: Vector[PlanLine] = Vector(
     PlanLine("QB", 10),
-    PlanLine("RB1", 46),
-    PlanLine("RB2", 28),
-    PlanLine("WR1", 33),
-    PlanLine("WR2", 21),
-    PlanLine("WR3", 12),
-    PlanLine("TE", 9),
-    PlanLine("FLEX", 11),
-    PlanLine("DST", 2),
+    PlanLine("RB1", 52),
+    PlanLine("RB2", 32),
+    PlanLine("WR1", 37),
+    PlanLine("WR2", 24),
+    PlanLine("WR3", 14),
+    PlanLine("TE", 10),
+    PlanLine("FLEX", 12),
+    PlanLine("DST", 1),
     PlanLine("K", 1),
-    PlanLine("BN1", 8),
-    PlanLine("BN2", 6),
-    PlanLine("BN3", 4),
-    PlanLine("BN4", 3),
-    PlanLine("BN5", 3),
-    PlanLine("BN6", 2),
+    PlanLine("BN1", 1),
+    PlanLine("BN2", 1),
+    PlanLine("BN3", 1),
+    PlanLine("BN4", 1),
+    PlanLine("BN5", 1),
+    PlanLine("BN6", 1),
     PlanLine("BN7", 1),
   )
 
@@ -151,6 +155,7 @@ final case class Nomination(playerId: String, name: String, pos: Pos, value: Int
 
 final case class View(
     inflation: Double,
+    premium: Double,
     moneyLeft: Int,
     valueLeft: Int,
     myTeam: Int,

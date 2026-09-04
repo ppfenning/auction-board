@@ -26,50 +26,76 @@ rescale, the plan, and the discipline.
 
 ## Budget by slot ($200)
 
+Rebuilt after 300-room mock auctions (docs/mocks.md): the first draft of
+this plan put $27 on the bench and ranked 7th of 10 by lineup value; this
+one ranks 3rd-4th. Starters $186, bench $1 a spot, and the bench upside is
+bought with surplus (see the rules below).
+
 | Slot | Plan | Who fits |
 |------|-----:|----------|
-| QB   | $10  | Maye / Lamar / Hurts / Burrow at $9-11 if one falls; else Daniels / C.Williams $6; else Dak / Nix / Herbert / Purdy $3-4 |
-| RB1  | $46  | Gibbs or Bijan ($55-60 ceiling), or CMC/Taylor ($42-47) if the top two go over $62 |
-| RB2  | $28  | Cook, Hampton, Saquon, Chase Brown, Achane (T3, $30-36); Walker / Henry / Love / Hall / Kyren ($25-28) if T3 is gone |
-| WR1  | $33  | London, Jefferson, Lamb, Olave ($32-36); or Puka / Chase / JSN / ARSB if one goes at value ($45-51) and RB1 becomes a T3 |
-| WR2  | $21  | Rice, Collins, AJB, G.Wilson, Pickens, DeVonta, Flowers ($23-28) |
-| WR3  | $12  | Nabers, Egbuka, McMillan, Adams, Jamo, McConkey, Waddle ($16-21) or a T5 at $10-13 |
-| TE   | $9   | Fannin / Pitts / Warren at $8-11; or Kelce / LaPorta / Andrews at $5-6 and bank the rest |
-| FLEX | $11  | The best remaining RB/WR under $13: Etienne, Swift, Higgins, Watson, DJ Moore, Evans |
-| D/ST | $2   | Whatever is left; nominate a top D/ST early so someone else pays $4 |
+| QB   | $10  | Maye / Lamar / Hurts / Burrow at $9-11 if one falls; else Daniels / C.Williams $6; else Dak / Herbert / Purdy / Goff $3-4 |
+| RB1  | $52  | Gibbs or Bijan (walk at $68), or CMC ($47 hard cap) / Taylor (walk at $50) if the top two go over |
+| RB2  | $32  | Cook, Hampton, Saquon, Chase Brown, Achane (T3, $30-36, walk at $39); Walker / Henry / Love / Hall / Kyren ($25-28) if T3 is gone |
+| WR1  | $37  | London, Jefferson, Lamb, Olave ($32-36); or Puka / Chase / JSN / ARSB at up to $54-61 and RB1 becomes a T3 |
+| WR2  | $24  | Rice, Collins, AJB, G.Wilson, Pickens, DeVonta, Flowers ($23-28) |
+| WR3  | $14  | Nabers, Egbuka, McMillan, Adams, Jamo, McConkey, Waddle ($16-21) or a T5 at $10-13 |
+| TE   | $10  | Fannin / Pitts / Warren at $8-11; or Kelce / LaPorta / Andrews at $5-6 and bank the rest |
+| FLEX | $12  | The best remaining RB/WR under $14: Lloyd, Tuten, Etienne, Swift, Higgins, Watson, DJ Moore |
+| D/ST | $1   | Whatever is left; nominate a top D/ST early so someone else pays $4 |
 | K    | $1   | Last pick |
-| BN1  | $8   | One upside RB with a path to touches (Skattebo, Javonte, Irving, Henderson, RJ Harvey-type) |
-| BN2  | $6   | One upside WR (Burden, Tate, Golden, Ayomanor-type) |
-| BN3-7| $13  | $1-4 each: handcuffs to MY RBs first, then rookies, then boring vets |
+| BN1-7| $7   | $1 each on paper. The real bench money is whatever surplus you carry into the endgame (below), spent on the tagged sleepers and handcuffs |
 
-Starters $173, bench $27. Three players at $46 + $33 + $28 = $107 (54%) is
-the intended shape. If you land two T1s (say Gibbs $57 + Chase $48), drop to
-$18 RB2 / $14 WR2 / $8 WR3 / $5 TE and you are still whole. If Bowers falls
-to $20, take him and make RB1 a $36 T3 instead.
+Three players at $52 + $37 + $32 = $121 (60%) is the intended shape. If
+you land two T1s (say Gibbs $60 + Chase $52), drop to $22 RB2 / $16 WR2 /
+$9 WR3 / $6 TE and you are still whole. If Bowers falls to $20, take him and
+make RB1 a $36 T3 instead.
+
+## Three rules the mocks forced
+
+The board shows the number for each of these in the header.
+
+1. **Surplus goes to the next starter.** `surplus = my $ − plan left`. When
+   it is positive, add it to the cap of the next starter you bid on. The
+   plan is a floor for starters, not a ceiling; money that reaches the
+   endgame unspent is worth nothing. This alone moved the mock rank a full
+   place.
+2. **Chase the room premium.** `room premium` is what the room has paid
+   over the sheet so far. When it is above 1.20, your caps are wrong for
+   this room: multiply starter caps by the premium instead of the tier cap.
+   Holding the line in a hot room finished last in the mocks with $90
+   unspent; chasing finished 3rd with $192 spent.
+3. **The bench is bought with surplus, never with plan money.** $1 a spot on
+   paper. A $6-8 Lloyd or Skattebo comes out of surplus, or out of the FLEX
+   line, never out of a starter's budget.
 
 ## Cut lines on price
 
 The board computes MAX per player live: `max = value * inflation * tierCap`,
 where inflation is (money left in the room) / (value left on the board for
-the slots still open), and tierCap is 1.10 for tiers 1-2, 1.05 for tier 3,
-1.00 for tier 4-5, and 0.90 below that. Rules that never move:
+the slots still open), and tierCap is 1.20 for tiers 1-2, 1.10 for tier 3,
+1.00 for tier 4-5, and 0.90 below that. (The caps were 1.10 and 1.05; against
+nine noisy bidders those won almost no stars in the mocks.) Rules that never
+move:
 
-- **Never exceed MAX.** The whole point of the sheet is that you decided
-  this before the adrenaline. One exception: the last T1/T2 RB, if you have
-  no RB1 yet and the money to absorb it, +$3.
-- **Tier 1 RB (Gibbs, Bijan): walk at $63.** Tier 1 WR (Puka, Chase, JSN,
-  ARSB): walk at $55. CMC: walk at $47 (age 30, August "tightness").
-- **Tier 3 RB ($30-36 values): walk at $38.** This is the zone where the
+- **Never exceed MAX plus your surplus, or MAX at the room premium,
+  whichever is higher.** The whole point of the sheet is that you decided
+  this before the adrenaline; the two adjustments are the sheet's own
+  rules, not exceptions to it.
+- **Tier 1 RB (Gibbs, Bijan): walk at $68.** Tier 1 WR: Puka $61, Chase
+  $60, JSN $56, ARSB $54. Taylor $50. CMC: walk at $47 (age 30, August
+  "tightness"), whatever the room premium says.
+- **Tier 3 RB ($30-36 values): walk at $39.** This is the zone where the
   room overpays most; let them.
 - **Any QB: walk at $12,** except Allen, whom you are not buying.
 - **Bowers / McBride: walk at $26.** Loveland $14, Warren / Fannin $11,
   Pitts $9, everyone else $6.
 - **D/ST $3, K $1.** No exceptions.
-- **Bench: $4 cap** except one $6-8 upside RB.
+- **Bench: $4 cap from surplus** except one $6-8 upside RB (Lloyd first).
 - **Slot math.** Your max bid is always `remaining - (open slots - 1)`. The
   board shows it; the plan tab shows what is planned for the slots you have
-  not filled. When "plan remaining" is more than "remaining budget", you are
-  over and must downgrade a slot on purpose, not by accident.
+  not filled. When "plan left" is more than "my $", you are over and must
+  downgrade a slot on purpose, not by accident. When "surplus" is positive,
+  you are under, and rule 1 above applies.
 
 ## Phases by nomination round (17 rounds x 10 nominations)
 
@@ -95,10 +121,12 @@ after theirs. QB and TE happen here: whoever is left of
 Maye/Lamar/Hurts/Burrow at $9-11, else the $3-6 tier; Fannin/Pitts/Warren at
 $8-11, else Kelce/LaPorta/Andrews at $5-6.
 
-**Rounds 13-17: the $1 endgame.** Most teams are at $1 per slot. Your $27
-bench budget makes you the richest bidder for every $2-4 player. Nominate
-your own sleepers now, opening at $1. Handcuff your RB1 if he is still on the
-board. K and D/ST last.
+**Rounds 13-17: the $1 endgame.** Most teams are at $1 per slot. Whatever
+surplus you carried here makes you the richest bidder for every $2-4
+player. Nominate your own sleepers now, opening at $1. Handcuff your RB1 if
+he is still on the board. K and D/ST last. If you arrive here with more
+than $15 of surplus, the earlier rounds went wrong: you held the line in a
+room that was paying over the sheet.
 
 ## Nomination rules
 

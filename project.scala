@@ -4,3 +4,4 @@
 //> using dep com.lihaoyi::upickle:4.4.3
 //> using test.dep org.scalameta::munit:1.3.6
 //> using resourceDir static
+//> using mainClass auction.Server
