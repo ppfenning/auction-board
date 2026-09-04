@@ -33,6 +33,11 @@ final case class Slot(name: String, eligible: Set[Pos]) derives ReadWriter
 final case class League(teams: Int, budget: Int, slots: Vector[Slot]) derives ReadWriter:
   def rosterSize: Int = slots.size
   def totalMoney: Int = teams * budget
+  /** The most a team can bid with `spent` gone and `filled` slots taken:
+    * what is left, minus $1 for every OTHER open slot. Zero once full. */
+  def maxBid(spent: Int, filled: Int): Int =
+    val open = rosterSize - filled
+    if open <= 0 then 0 else math.max(0, (budget - spent) - (open - 1))
 
 object League:
   /** ESPN, 10 teams, $200: QB, 2 RB, 3 WR, FLEX (RB/WR/TE), D/ST, K, 7 bench. */
@@ -70,6 +75,9 @@ final case class DraftState(
   def nextSeq: Int = picks.map(_.seq).maxOption.getOrElse(0) + 1
   def isSold(playerId: String): Boolean = picks.exists(_.playerId == playerId)
   def spent(team: Int): Int = picks.filter(_.team == team).map(_.price).sum
+  def filled(team: Int): Int = picks.count(_.team == team)
+  /** The sheet value the board uses: the override if one exists. */
+  def effectiveValue(p: Player): Int = overrides.getOrElse(p.id, p.value)
 
 object DraftState:
   def fresh(league: League, myTeam: Int = 0): DraftState =
@@ -177,7 +185,11 @@ object Csv:
   def slug(name: String, pos: String): String =
     name.toLowerCase.replaceAll("[^a-z0-9]+", "-").stripSuffix("-") + "-" + pos.toLowerCase
 
-  /** Split one CSV line honouring double quotes. */
+  /** Split one CSV line honouring double quotes.
+    *
+    * Charter A3 bend, stated on purpose: the StringBuilder is the fold's own
+    * accumulator, never escapes the fold, and is replaced (not reused) at each
+    * comma. Everything observable from outside is an immutable Vector. */
   def fields(line: String): Vector[String] =
     val (acc, cur, _) = line.foldLeft((Vector.empty[String], new StringBuilder, false)) {
       case ((acc, cur, inQ), '"') => (acc, cur, !inQ)

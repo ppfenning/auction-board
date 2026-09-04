@@ -51,17 +51,24 @@ def tier(pos: str, value: int) -> int:
     return next((i + 1 for i, c in enumerate(cuts) if value >= c), len(cuts) + 1)
 
 
+def replacement_floor(values: list[float], depth: int) -> float:
+    """The 12-team value of the player at this position's 10-team rostered depth."""
+    ordered = sorted(values, reverse=True)
+    return ordered[depth - 1] if len(ordered) >= depth else 1.0
+
+
 def derive(rows):
-    by_pos = {}
-    for r in rows:
-        by_pos.setdefault(r["pos"], []).append(r)
-    above = {}
-    for pos, group in by_pos.items():
-        ordered = sorted(group, key=lambda r: -float(r["value_12ppr"]))
-        n = REPLACEMENT[pos]
-        floor = float(ordered[n - 1]["value_12ppr"]) if len(ordered) >= n else 1.0
-        for r in ordered:
-            above[r["player"]] = max(0.0, float(r["value_12ppr"]) - floor) * TILT[pos]
+    """Pure: rows in, derived rows out. Each binding is defined once; no
+    structure is mutated after it is built."""
+    positions = {r["pos"] for r in rows}
+    floors = {
+        pos: replacement_floor([float(r["value_12ppr"]) for r in rows if r["pos"] == pos], REPLACEMENT[pos])
+        for pos in positions
+    }
+    above = {
+        r["player"]: max(0.0, float(r["value_12ppr"]) - floors[r["pos"]]) * TILT[r["pos"]]
+        for r in rows
+    }
     pool = TEAMS * BUDGET - TEAMS * SPOTS
     top = sorted(above.values(), reverse=True)[: TEAMS * SPOTS]
     k = pool / sum(top)
