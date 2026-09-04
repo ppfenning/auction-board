@@ -1,7 +1,7 @@
 # auction-board
 
 A draft-day board for an ESPN salary-cap (auction) fantasy football draft:
-10 teams, $200, half-PPR, no TE slot. Scala 3 core (values, inflation, cut
+10 teams, $200, half-PPR, 17-man rosters (QB/2RB/3WR/TE/FLEX/DST/K + 7 bench). Scala 3 core (values, inflation, cut
 lines, roster math, nomination advice) behind a small Cask server and a
 single-page board you keep open next to the ESPN draft room.
 
@@ -28,6 +28,7 @@ the draft. Use **Teams → I am** to say which team is yours.
 ## Checks
 
     scala-cli test .
+    pytest -q          # same suite, for tooling that expects pytest
 
 `pytest -q` runs the same suite through `tests/test_scala.py`, for tooling
 that expects pytest.

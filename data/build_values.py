@@ -1,25 +1,26 @@
-"""Derive data/players.csv (10-team, half-PPR, no TE slot, $200) from the raw
-FFToday 12-team PPR table. Pure transform over the raw file; run once:
+"""Derive data/players.csv (10-team, half-PPR, $200; QB/2RB/3WR/TE/FLEX/DST/K
++ 7 bench = 17 spots) from the raw FFToday 12-team PPR table. Pure transform
+over the raw file; run once:
 
     python3 data/build_values.py
 
-Method: value above positional replacement, rescaled so the 160 rostered
-spots (10 teams x 16) sum to $2000, with a half-PPR tilt (RB up, WR down) and
-TE cut to flex-only value because this league starts no TE.
+Method: value above positional replacement, rescaled so the 170 rostered
+spots (10 teams x 17) sum to $2000, with a half-PPR tilt (RB up, WR and TE
+down a little, since receptions are worth half as much).
 """
 import csv, sys
 from pathlib import Path
 
 RAW = Path(__file__).parent / "raw" / "fftoday-2026-08-20-12team-ppr.csv"
 OUT = Path(__file__).parent / "players.csv"
-TEAMS, SPOTS, BUDGET = 10, 16, 200
-REPLACEMENT = {"QB": 14, "RB": 56, "WR": 62, "TE": 4, "DST": 10, "K": 10}
-TILT = {"RB": 1.04, "WR": 0.96, "QB": 1.0, "TE": 0.45, "DST": 1.0, "K": 1.0}
+TEAMS, SPOTS, BUDGET = 10, 17, 200
+REPLACEMENT = {"QB": 14, "RB": 54, "WR": 60, "TE": 14, "DST": 10, "K": 10}
+TILT = {"RB": 1.04, "WR": 0.96, "QB": 1.0, "TE": 0.97, "DST": 1.0, "K": 1.0}
 TIERS = {
     "RB": [50, 40, 30, 24, 15, 8, 3],
     "WR": [45, 33, 26, 20, 13, 7, 3],
     "QB": [20, 9, 5, 2],
-    "TE": [6, 2],
+    "TE": [22, 12, 7, 3],
     "DST": [2],
     "K": [2],
 }
@@ -41,8 +42,9 @@ NOTES = {
     "Alec Pierce": "ankle post-surgery, gradual workload",
     "Tank Dell": "IR with return designation",
     "Kyle Monangai": "hyperextended knee, week-to-week",
-    "Tyler Warren": "groin, likely Wk1 (no TE slot anyway)",
-    "George Kittle": "Achilles return (no TE slot anyway)",
+    "Tyler Warren": "groin, likely Wk1; practice ramp questioned",
+    "George Kittle": "Achilles return; activated from PUP, individual work only as of Sep 2",
+    "Tucker Kraft": "ACL return, expected full go Wk1",
 }
 
 
@@ -96,4 +98,5 @@ if __name__ == "__main__":
         w = csv.DictWriter(f, fieldnames=list(out[0].keys()))
         w.writeheader()
         w.writerows(out)
-    print(f"wrote {len(out)} players; top-160 sum = {sum(r['value'] for r in out[:160])}", file=sys.stderr)
+    rostered = TEAMS * SPOTS
+    print(f"wrote {len(out)} players; top-{rostered} sum = {sum(r['value'] for r in out[:rostered])}", file=sys.stderr)

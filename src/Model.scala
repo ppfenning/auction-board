@@ -40,7 +40,7 @@ final case class League(teams: Int, budget: Int, slots: Vector[Slot]) derives Re
     if open <= 0 then 0 else math.max(0, (budget - spent) - (open - 1))
 
 object League:
-  /** ESPN, 10 teams, $200: QB, 2 RB, 3 WR, FLEX (RB/WR/TE), D/ST, K, 7 bench. */
+  /** ESPN, 10 teams, $200: QB, 2 RB, 3 WR, TE, FLEX (RB/WR/TE), D/ST, K, 7 bench: 17 spots. */
   val espn10: League =
     val bench = Vector.tabulate(7)(i => Slot(s"BN${i + 1}", Pos.values.toSet))
     League(
@@ -53,6 +53,7 @@ object League:
         Slot("WR1", Set(Pos.WR)),
         Slot("WR2", Set(Pos.WR)),
         Slot("WR3", Set(Pos.WR)),
+        Slot("TE", Set(Pos.TE)),
         Slot("FLEX", Set(Pos.RB, Pos.WR, Pos.TE)),
         Slot("DST", Set(Pos.DST)),
         Slot("K", Set(Pos.K)),
@@ -94,12 +95,13 @@ final case class PlanLine(slot: String, planned: Int) derives ReadWriter
 object Plan:
   val default: Vector[PlanLine] = Vector(
     PlanLine("QB", 10),
-    PlanLine("RB1", 48),
-    PlanLine("RB2", 30),
-    PlanLine("WR1", 34),
-    PlanLine("WR2", 22),
-    PlanLine("WR3", 13),
-    PlanLine("FLEX", 12),
+    PlanLine("RB1", 46),
+    PlanLine("RB2", 28),
+    PlanLine("WR1", 33),
+    PlanLine("WR2", 21),
+    PlanLine("WR3", 12),
+    PlanLine("TE", 9),
+    PlanLine("FLEX", 11),
     PlanLine("DST", 2),
     PlanLine("K", 1),
     PlanLine("BN1", 8),
@@ -108,7 +110,7 @@ object Plan:
     PlanLine("BN4", 3),
     PlanLine("BN5", 3),
     PlanLine("BN6", 2),
-    PlanLine("BN7", 2),
+    PlanLine("BN7", 1),
   )
 
 // ── The JSON the page renders: GET /api/view returns exactly one View ────────

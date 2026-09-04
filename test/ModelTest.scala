@@ -30,10 +30,11 @@ class ModelTest extends munit.FunSuite:
 
 class ModelHelpersTest extends munit.FunSuite:
   test("max bid leaves a dollar for every other open slot") {
-    assertEquals(League.espn10.maxBid(spent = 0, filled = 0), 185)
-    assertEquals(League.espn10.maxBid(spent = 150, filled = 10), 45)
-    assertEquals(League.espn10.maxBid(spent = 199, filled = 15), 1)
-    assertEquals(League.espn10.maxBid(spent = 200, filled = 16), 0)
+    assertEquals(League.espn10.rosterSize, 17)
+    assertEquals(League.espn10.maxBid(spent = 0, filled = 0), 184)
+    assertEquals(League.espn10.maxBid(spent = 150, filled = 10), 44)
+    assertEquals(League.espn10.maxBid(spent = 199, filled = 16), 1)
+    assertEquals(League.espn10.maxBid(spent = 200, filled = 17), 0)
   }
   test("effective value prefers the override") {
     val p = Player("x-rb", 1, Pos.RB, "X", "DET", 40, 2, "")
