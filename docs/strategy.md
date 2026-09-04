@@ -118,10 +118,160 @@ board. K and D/ST last.
    value to drain a rival is fine if you would be happy owning him at that
    number. Never enforce a player you would hate to win.
 
+## Values: pay to the sheet, because the room will not
+
+The sheet already prices these fairly; the point is that the ROOM tends to
+price them under, so they are where the plan's RB2 / WR2 / WR3 / FLEX money
+should go. Each line is: sheet value, my cap, why.
+
+**Running backs**
+- **Omarion Hampton (LAC) $32, cap $35.** Healthy RB1 upside behind a
+  restored line, Herbert's offense. The room treats him as a T4 because of
+  last year's injury; he is the best RB2 on the board.
+- **Cam Skattebo (NYG) $23, cap $24.** Top-11 pace in weeks 3-7 before the
+  leg injury, catches passes, and the quarterback is his best friend. Rooms
+  price the injury, not the role.
+- **Javonte Williams (DAL) $22, cap $22.** 252 carries as the lead back in a
+  run-heavy offense, 16 games a year for three years. A boring $22 that
+  returns RB2 numbers.
+- **Bhayshul Tuten (JAC) $16, cap $16.** Etienne left; Tuten is the lead back
+  with 3.2 yards after contact per carry and goal-line looks. Rodriguez is the
+  handcuff, not the threat.
+- **Jeremiyah Love (ARI) $22 after the ankle, cap $22.** Sheet was $27; the
+  high-ankle sprain (no surgery) makes him 50-50 for Week 1 on Sep 13. If the
+  room drops him to $16-18, that is a top-12 rookie back at a T5 price.
+- **Jadarian Price (SEA) $10, cap $12.** First-round pick, Walker gone,
+  Charbonnet on PUP for four games. The touches are his in September.
+
+**Wide receivers**
+- **Emeka Egbuka (TB) $19, cap $21.** Four TDs in his first five games before
+  the hamstring; Evans is gone; Mayfield is healthy. The toe is a non-issue.
+- **Malik Nabers (NYG) $21, cap $17.** The ACL discount is real but
+  overdone. At $17 you are buying a WR1 talent for WR3 money and eating the
+  ramp weeks with your bench.
+- **Luther Burden III (CHI) $14, cap $15.** DJ Moore's 85+ targets are
+  vacated; Burden got better every week down the stretch. Cheap WR3 with a
+  WR2 ceiling.
+- **D.J. Moore (BUF) $14, cap $15.** Allen called him "that guy". WR6 as
+  recently as 2023, now the primary read in the league's best offense.
+- **Matthew Golden (GB) $3, cap $6.** 138 Packers targets vacated; 4.29
+  speed at flanker. The best $3 WR on the sheet.
+- **Michael Pittman Jr. (PIT) $10, cap $10.** Boring target share on a new
+  team; fine as WR3 if the flashier names go over.
+
+**Quarterbacks: the $3-7 tier is the whole plan**
+- **Justin Herbert (LAC) $3, cap $7.** QB10 last year with no starting
+  tackles; Alt and Slater are back. Top-five upside at a QB12 price.
+- **Jared Goff (DET) $2, cap $4.** 4,564 yards, 30+ TDs every year, priced
+  QB16 because he is dull.
+- **Brock Purdy (SF) $3, cap $4.** Efficient offense, weapons back.
+- **Jaxson Dart (NYG) $2, cap $4.** Rushing upside plus Nabers and Likely;
+  on both sleeper and bust lists, so buy at $2 and never $6.
+
+**Tight ends: the $3-5 vets beat the $10-13 middle**
+- **Dallas Goedert (PHI) $1, cap $5.** TE4 in 2025 (60/591/11); A.J. Brown is
+  gone. TDs will regress, targets will rise.
+- **Isaiah Likely (NYG) $1, cap $5.** $40M deal, Harbaugh reunion, second
+  read behind Nabers with Wan'Dale's targets vacated.
+- **Kelce (KC) $6 / LaPorta (DET) $5 / Andrews (BAL) $5.** Any one of them
+  at $5 is a fine TE1 in a 10-team league.
+- **Juwan Johnson (NO) $1-2.** 102 targets and 889 yards last year, and Tyson
+  is out until October. The cheapest top-12 TE on the board.
+
+## Sleepers: $1-4 with a real path
+
+**The one that matters most: MarShawn Lloyd (GB), sheet now $12, cap $14.**
+Jacobs went on the commissioner's exempt list on Aug 30 and cannot practice
+or play; his next hearing is Nov 17. Lloyd was explosive in preseason and
+the depth chart behind him is thin. Most rooms still have him as a $1-2
+handcuff. If he is still available in the endgame, he is the first $5-8 you
+spend from the bench budget.
+
+**Running backs**
+- **Mike Washington Jr. (LV) $1, cap $5.** 10.0 RAS, 168 preseason yards at
+  7.3 a carry, and Jeanty has no return date. The Raiders' Week 1 back.
+- **Chris Rodriguez Jr. (JAC) $3, cap $4.** Coen's Kentucky back, co-starter
+  billing with Tuten, red-zone role. Standalone flex weeks.
+- **Keaton Mitchell (LAC) $1, cap $2.** 4.37 speed in McDaniel's zone scheme
+  behind Hampton; league-winner if Hampton misses time.
+- **Dylan Sampson (CLE) $3, cap $2.** Monken always has a pass-catching back;
+  Sampson is that role behind Judkins.
+- **Kenny Gainwell (TB) $7, cap $4.** 13 touches and 18 points a game late
+  last season; Irving's touch share is the question.
+
+**Wide receivers**
+- **De'Zhaun Stribling (SF) $3, cap $4.** Pearsall, Kirk and Evans hurt, so
+  the 6'2" camp star is Purdy's WR2 in Week 1.
+- **KC Concepcion (CLE) $3, cap $2.** Elite YAC; Monken is moving him around
+  the formation.
+- **Rashid Shaheed (SEA) $2, cap $2.** $51M deal (more than Walker got),
+  crossers and YAC with Darnold, not just go routes.
+- **Jalen McMillan (TB) $1, cap $2.** Mayfield chemistry; the offense is
+  opening up under Zac Robinson.
+- **Carnell Tate (TEN) $7, cap $5.** Most pro-ready route runner in the
+  class; Titans targets are wide open.
+- **Zachariah Branch (ATL) $1.** Deep sleeper: 4.35 speed, screen game, an
+  easy depth chart. Last bench spot.
+
+**Quarterbacks (only if you punted QB to the endgame)**
+- **Tyler Shough (NO) $1, cap $2.** QB9 from Week 10 on, rushing upside,
+  Kellen Moore's pace, a bad division.
+- **Kyler Murray (MIN) $1, cap $3.** O'Connell's scheme with Jefferson and
+  Addison; rushing floor.
+- **Baker Mayfield (TB) $1, cap $3.** Priced like a QB2 after a down year.
+
+**Tight ends**
+- **Terrance Ferguson (LAR) $1.** 18.3-yard aDOT as a rookie, McVay is using
+  him as a big slot. TE2 with a TE1 ceiling.
+
+## Handcuffs, in the order to buy them
+
+Buy the handcuff to YOUR RB1 first, then the ones with standalone value.
+
+1. **Blake Corum (LAR) $6, cap $4.** 746 yards, 6 TDs, 5.1 a carry beside
+   Kyren; usable even with Kyren healthy.
+2. **MarShawn Lloyd (GB)** — see above; he is a starter now, not a handcuff.
+3. **Tank Bigsby (PHI) $1, cap $3.** First in yards after contact per attempt
+   last year; Saquon's 2025 workload was enormous.
+4. **Kyle Monangai (CHI) $4, cap $3.** 783 yards as a rookie behind Swift;
+   the hyperextended knee is why he is cheap.
+5. **Ray Davis (BUF) $1, cap $2.** Majority of an elite rushing offense the
+   week Cook sits.
+6. **Rico Dowdle (PIT) $8, cap $3.** Goal-line back behind Warren; 4 of 6
+   carries inside the 5 were TDs.
+7. **Tyler Allgeier (ARI) $1, cap $3.** Early-season role if Love sits; 8 TDs
+   last year.
+8. **Jaylen Wright (MIA) $1-2.** Achane's injury history makes this one
+   cheap insurance.
+
+## Avoid at the room's price
+
+Not bad players; bad prices. Each has a number above which you let go.
+- **Josh Jacobs (GB): $3.** Exempt list, no timeline, hearing Nov 17. A
+  November stash at most.
+- **Ashton Jeanty (LV): $24** (sheet $31 before the news). Ankle sprain, no
+  return date as of Sep 2. Someone will pay $30.
+- **Christian McCaffrey (SF): $47.** 450 touches last year, age 30, August
+  tightness. Let a rival buy the risk at $52.
+- **Derrick Henry (BAL): $22** (sheet $28). Age 32, on every bust list.
+- **Kenneth Walker (KC): $22** (sheet $29). New team, drafted competition.
+- **Rashee Rice (KC): $24** (sheet $28). Target share diluted.
+- **Davante Adams (LAR) $15, Mike Evans (SF) $12.** Age 33, both.
+- **Bo Nix (DEN): $3.** Every bust list; the $10 QB tier is Maye, Lamar,
+  Hurts, Burrow, not him.
+- **Colston Loveland (CHI) $13, Fannin (CLE) $10.** Not bad; the $5 vets
+  return the same points.
+
 ## Injury flags you must not forget on Sunday
 
-- Jeanty (LV RB): ankle sprain, on the 53 but no return date as of Sep 2. Value
-  $32 on the sheet; I would not go past $22.
+- Josh Jacobs (GB RB): commissioner's exempt list since Aug 30, cannot
+  practice or play, next hearing Nov 17. $3 stash at most; MarShawn Lloyd
+  has the job.
+- Jeremiyah Love (ARI RB): high-ankle sprain (mid-August, no surgery),
+  50-50 for Week 1 on Sep 13. Sheet cut to $22; buy at $18 if the room
+  panics.
+- Jeanty (LV RB): ankle sprain, on the 53 but no return date as of Sep 2.
+  Sheet cut to $24; I would not go past $24.
 - Nabers (NYG WR): ACL return, expected Week 1 but ramping. $21, fine at $17.
 - Zay Flowers (BAL WR): quad, day-to-day. $23, fine at $19.
 - CMC (SF RB): late-August tightness, age 30. $47 sheet, walk at $47.
