@@ -13,6 +13,16 @@ Open http://localhost:8080. Every sale you record is written to `draft.json`
 immediately, so a refresh, a crash, or a second browser window never loses
 the draft. Use **Teams → I am** to say which team is yours.
 
+On the board: `/` focuses the search box; Enter in a price box records the
+sale; the `$` button overrides a player's value when the room disagrees
+with the sheet (Enter saves, Escape cancels); the tag filter pulls up the
+VALUE, SLEEPER, HANDCUFF, AVOID and injury-flagged rows; **Undo last**
+reverses the most recent sale. The header shows live inflation, your
+remaining money and max bid, and what your plan still needs for the slots
+you have not filled — when "plan left" turns red it exceeds your money.
+**Nominate** ranks who to throw out next and says why. **Strategy** is
+docs/strategy.md rendered in place.
+
 ## Layout
 
 - `data/raw/` — the FFToday table as fetched (never edited).
