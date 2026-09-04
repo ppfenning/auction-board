@@ -129,6 +129,22 @@ object Server extends cask.MainRoutes:
     val candidates = Names.candidates(pool(snap), name, Pos.parse(pos))
     ujson.Arr(candidates.map(m => ujson.Obj("id" -> m.player.id, "name" -> m.player.name, "pos" -> m.player.pos.toString, "value" -> m.player.value, "score" -> m.score))*)
 
+  /** What to pay for a room label right now, with every rule applied. A
+    * label below the 0.8 match threshold answers 404 with the candidates,
+    * never a number for the wrong player. */
+  @cask.get("/api/advice")
+  def advice(name: String, pos: String = ""): cask.Response[ujson.Value] =
+    val snap = current
+    val players = pool(snap)
+    Names.candidates(players, name, Pos.parse(pos)) match
+      case m +: _ if m.score >= 0.8 =>
+        cask.Response(writeJs(Advice.compute(players, snap.draft, snap.league, Plan.default, m.player)))
+      case candidates =>
+        cask.Response(
+          ujson.Obj("error" -> s"no confident match for '$name'", "candidates" -> ujson.Arr(candidates.map(c => ujson.Obj("name" -> c.player.name, "pos" -> c.player.pos.toString, "score" -> c.score))*)),
+          statusCode = 404,
+        )
+
   /** Record a sale by the room's own label. Refuses below a 0.8 match so a
     * misread never lands on the wrong player; the error names the best
     * candidates so the caller can retry with an exact name or use

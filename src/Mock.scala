@@ -19,13 +19,9 @@ object Mock:
     * how much it discounts bench-only buys. */
   final case class Rival(style: Double, benchFactor: Double, noise: Double)
 
-  /** The strategy's hard caps that the sheet's MAX does not know about. */
-  val hardCaps: Map[String, Int] = Map(
-    "christian-mccaffrey-rb" -> 47, "ashton-jeanty-rb" -> 24, "derrick-henry-rb" -> 22,
-    "kenneth-walker-rb" -> 22, "rashee-rice-wr" -> 24, "davante-adams-wr" -> 15,
-    "mike-evans-wr" -> 12, "bo-nix-qb" -> 3, "josh-jacobs-rb" -> 3, "josh-allen-qb" -> 12,
-  )
-  val tier1Cap: Map[Pos, Int] = Map(Pos.RB -> 68, Pos.WR -> 61, Pos.TE -> 26, Pos.QB -> 12, Pos.DST -> 3, Pos.K -> 1)
+  /** One source for the walk-aways: Advice.scala, which the board serves. */
+  val hardCaps: Map[String, Int] = Advice.hardCaps
+  val tier1Cap: Map[Pos, Int] = Advice.tierCaps
 
   /** No real manager drops $184 on one player: a rival pays at most this
     * share of the budget for anyone, and never more than this share of what

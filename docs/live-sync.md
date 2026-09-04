@@ -1,9 +1,22 @@
 # Live sync: keeping the board current from the ESPN draft room
 
-A Claude Code session with Claude in Chrome watches the ESPN draft room,
-reads each completed auction, and posts it to the board. You bid in the
-room; the session keeps the numbers straight and talks in chat. It never
-clicks in the room and never bids.
+Two ways, and the first is the one to use on Sunday:
+
+1. **The sidebar userscript** (`tools/espn-sidebar.user.js`, Tampermonkey).
+   Runs inside the ESPN room, watches the DOM, records every sale to the
+   board the instant it lands, and shows a sidebar with the one number
+   that matters for the player on the block: what to bid, with the plan,
+   surplus, premium and walk-away rules already applied (`GET /api/advice`).
+   No Claude in the loop for capture. Install: Tampermonkey → Create new
+   script → paste the file → save; it matches the ESPN draft URL.
+2. **A Claude Code session with Claude in Chrome** (below) as the fallback
+   and for commentary: it can run the same extractor in the room tab and
+   post sales by hand if the userscript breaks, and it talks in chat.
+
+Both depend on ESPN's DOM selectors, which are GUESSES in both files until
+the Saturday mock draft. Fixing them is the mock's whole purpose.
+
+You bid in the room; nothing here clicks in the room and nothing bids.
 
 ## Before the draft (Saturday mock first)
 
