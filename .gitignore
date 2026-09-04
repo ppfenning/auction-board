@@ -1,0 +1,7 @@
+.scala-build/
+.bsp/
+.metals/
+__pycache__/
+.pytest_cache/
+draft.json
+draft.*.json
