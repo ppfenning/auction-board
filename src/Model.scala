@@ -72,6 +72,10 @@ final case class DraftState(
     myTeam: Int,
     picks: Vector[Pick],
     overrides: Map[String, Int],
+    /** Players the room sold that the sheet does not list (a kicker, a
+      * deep flier): added at $1 during the draft so the money still
+      * counts, and persisted with the state so a restart keeps them. */
+    extras: Vector[Player] = Vector.empty,
 ) derives ReadWriter:
   def nextSeq: Int = picks.map(_.seq).maxOption.getOrElse(0) + 1
   def isSold(playerId: String): Boolean = picks.exists(_.playerId == playerId)

@@ -86,7 +86,7 @@ object Server extends cask.MainRoutes:
         val next = current.copy(draft = newDraft)
         persist(next.statePath, next.draft)
         current = next
-        cask.Response(writeJs(Views.assemble(next.players, next.draft, next.league)))
+        cask.Response(writeJs(Views.assemble(pool(next), next.draft, next.league)))
   }
 
   /** The Option[Int] a `value` field of `n` or `null` decodes to, the shape
@@ -116,11 +116,55 @@ object Server extends cask.MainRoutes:
   @cask.get("/api/view")
   def view(): ujson.Value =
     val snap = current
-    writeJs(Views.assemble(snap.players, snap.draft, snap.league))
+    writeJs(Views.assemble(pool(snap), snap.draft, snap.league))
+
+  /** The sheet plus whatever the room sold that the sheet did not list. */
+  def pool(snap: Snapshot): Vector[Player] = snap.players ++ snap.draft.extras
+
+  /** Live-sync helper: who the sheet thinks a room label is, with scores,
+    * so the caller can decide before recording anything. */
+  @cask.get("/api/match")
+  def matchName(name: String, pos: String = ""): ujson.Value =
+    val snap = current
+    val candidates = Names.candidates(pool(snap), name, Pos.parse(pos))
+    ujson.Arr(candidates.map(m => ujson.Obj("id" -> m.player.id, "name" -> m.player.name, "pos" -> m.player.pos.toString, "value" -> m.player.value, "score" -> m.score))*)
+
+  /** Record a sale by the room's own label. Refuses below a 0.8 match so a
+    * misread never lands on the wrong player; the error names the best
+    * candidates so the caller can retry with an exact name or use
+    * /api/sell-unlisted. `team` is "3", "Team 3", or a team name. */
+  @cask.postJson("/api/sell-by-name")
+  def sellByName(name: String, team: String, price: Int, pos: String = ""): cask.Response[ujson.Value] =
+    mutate { snap =>
+      val players = pool(snap)
+      val candidates = Names.candidates(players, name, Pos.parse(pos))
+      for
+        m <- candidates.headOption.filter(_.score >= 0.8).toRight(
+          s"no confident match for '$name'" + (if candidates.isEmpty then " (not on the sheet: use /api/sell-unlisted)" else s"; closest: ${candidates.map(c => s"${c.player.name} ${c.score}").mkString(", ")}")
+        )
+        t <- Names.resolveTeam(snap.draft.teamNames, team).toRight(s"unknown team '$team'")
+        s <- Draft.sell(snap.draft, snap.league, players, m.player.id, t, price)
+      yield s
+    }
+
+  /** A player the sheet does not list: added at $1 value in the state's
+    * extras, then sold, so the room's money is counted. */
+  @cask.postJson("/api/sell-unlisted")
+  def sellUnlisted(name: String, pos: String, team: String, price: Int, nflTeam: String = "FA"): cask.Response[ujson.Value] =
+    mutate { snap =>
+      for
+        p <- Pos.parse(pos).toRight(s"unknown position '$pos'")
+        t <- Names.resolveTeam(snap.draft.teamNames, team).toRight(s"unknown team '$team'")
+        extra = Player(Csv.slug(name, p.toString), 999, p, name, nflTeam, 1, 8, "unlisted: added during the draft")
+        _ <- Either.cond(!pool(snap).exists(_.id == extra.id), (), s"'${extra.name}' is already on the sheet; use /api/sell-by-name")
+        withExtra = snap.draft.copy(extras = snap.draft.extras :+ extra)
+        s <- Draft.sell(withExtra, snap.league, pool(snap) :+ extra, extra.id, t, price)
+      yield s
+    }
 
   @cask.postJson("/api/sell")
   def sell(playerId: String, team: Int, price: Int): cask.Response[ujson.Value] =
-    mutate(snap => Draft.sell(snap.draft, snap.league, snap.players, playerId, team, price))
+    mutate(snap => Draft.sell(snap.draft, snap.league, pool(snap), playerId, team, price))
 
   @cask.post("/api/undo")
   def undo(): cask.Response[ujson.Value] =

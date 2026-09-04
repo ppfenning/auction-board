@@ -51,3 +51,10 @@ Nine simulated rivals with randomised pricing bid against the strategy as
 written; the report ranks my lineup among the ten teams under each bidding
 policy and prints three sample rooms. Results and the model are in
 docs/mocks.md.
+
+## Live sync from the ESPN room
+
+A Claude Code session with Claude in Chrome can watch the draft room and
+post each sale to the board by its ESPN label; see docs/live-sync.md.
+Routes: `GET /api/match?name=...`, `POST /api/sell-by-name`,
+`POST /api/sell-unlisted`. Team names on the board must match ESPN's.

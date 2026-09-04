@@ -30,6 +30,16 @@ EXTRA_ROWS = [
     {"rank": "900", "pos": "TE", "player": "Terrance Ferguson", "team": "LAR", "value_12ppr": "1"},
     {"rank": "901", "pos": "WR", "player": "Zachariah Branch", "team": "ATL", "value_12ppr": "1"},
     {"rank": "902", "pos": "RB", "player": "Jaylen Wright", "team": "MIA", "value_12ppr": "1"},
+] + [
+    # Every defense the sheet did not list, at the floor, so a live room's
+    # "Ravens D/ST" sale has a row to land on.
+    {"rank": str(910 + i), "pos": "DST", "player": city, "team": abbr, "value_12ppr": "1"}
+    for i, (city, abbr) in enumerate([
+        ("Arizona", "ARI"), ("Atlanta", "ATL"), ("Baltimore", "BAL"), ("Carolina", "CAR"), ("Chicago", "CHI"),
+        ("Cincinnati", "CIN"), ("Cleveland", "CLE"), ("Dallas", "DAL"), ("Green Bay", "GB"), ("Indianapolis", "IND"),
+        ("Kansas City", "KC"), ("Las Vegas", "LV"), ("Miami", "MIA"), ("New Orleans", "NO"), ("New York Giants", "NYG"),
+        ("New York Jets", "NYJ"), ("San Francisco", "SF"), ("Tampa Bay", "TB"), ("Tennessee", "TEN"), ("Washington", "WAS"),
+    ])
 ]
 
 # Hand adjustments to the rescaled value where the news is newer than the
