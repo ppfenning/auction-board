@@ -38,10 +38,15 @@ object Nominate:
     val art = article(p.pos)
     if p.value >= 20 && !needs.contains(p.pos) && afford >= 2 then
       (30 + p.value, s"Drain: $afford rivals can pay $$${p.value}, you don't need $art ${p.pos}")
+    // An AVOID tag is a decision already made: whether or not the position is
+    // still open, this is a player to let a rival own, at any point in the draft.
+    else if p.note.toUpperCase.contains("AVOID") && p.value >= 8 then
+      (28 + p.value, s"Avoid: $afford rivals can pay $$${p.value}, ${p.note}")
     else if p.value >= 15 && p.note.nonEmpty && !needs.contains(p.pos) then
       (25 + p.value, s"Risk: $afford rivals can pay $$${p.value}, ${p.note}")
-    else if baitPositions.contains(p.pos) && p.value >= 6 && !needs.contains(p.pos) then
-      (20 + p.value, s"Bait: $afford rivals can pay $$${p.value}, you don't need $art ${p.pos}")
+    // A $20+ QB is bait even with the QB slot open: the plan never pays that.
+    else if baitPositions.contains(p.pos) && (p.value >= 20 || (p.value >= 6 && !needs.contains(p.pos))) then
+      (20 + p.value, s"Bait: $afford rivals can pay $$${p.value}, " + (if needs.contains(p.pos) then s"you are not paying $$${p.value} for $art ${p.pos}" else s"you don't need $art ${p.pos}"))
     else if needs.contains(p.pos) && afford <= 2 && p.value >= 8 then
       (15 + p.value + 5 * (2 - afford), s"Steal: $afford rivals can pay $$${p.value}, you need $art ${p.pos}")
     else

@@ -20,6 +20,7 @@ object Page:
     th{color:var(--dim);font-weight:600;cursor:pointer;position:sticky;top:52px;background:var(--bg)}
     tr.sold td{color:var(--dim);text-decoration:line-through}tr.mine td{color:var(--me);text-decoration:none}
     tr.t1 td.tier,tr.t2 td.tier{color:var(--acc)}td.note{white-space:normal;max-width:360px;color:var(--warn);font-size:12px}
+    td.note.tag-value{color:var(--acc)}td.note.tag-sleeper{color:var(--me)}td.note.tag-handcuff{color:var(--dim)}td.note.tag-avoid{color:var(--bad)}
     .controls{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap}.controls input,.controls select{background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:6px 8px;border-radius:6px}
     .sell{display:inline-flex;gap:4px}.sell input{width:52px;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:2px 4px;border-radius:4px}
     button.act{background:var(--acc);color:#000;border:0;padding:3px 8px;border-radius:4px;cursor:pointer}button.act.warn{background:var(--warn)}button.act.bad{background:var(--bad)}
@@ -41,9 +42,9 @@ object Page:
         header(
           div(cls := "stat")("inflation", b(id := "st-inflation")("1.00")),
           div(cls := "stat")("my $", b(id := "st-remaining")("200")),
-          div(cls := "stat")("my max bid", b(id := "st-maxbid")("185")),
+          div(cls := "stat")("my max bid", b(id := "st-maxbid")("184")),
           div(cls := "stat")("plan left", b(id := "st-plan")("200")),
-          div(cls := "stat")("open slots", b(id := "st-slots")("16")),
+          div(cls := "stat")("open slots", b(id := "st-slots")("17")),
           div(cls := "stat")("room $ left", b(id := "st-room")("2000")),
           nav(
             button(cls := "active", attr("data-tab") := "board")("Board"),
@@ -61,6 +62,14 @@ object Page:
               select(id := "pos-filter")(
                 option(value := "")("All"),
                 Pos.values.toSeq.map(p => option(value := p.toString)(p.toString)),
+              ),
+              select(id := "tag-filter")(
+                option(value := "")("Any tag"),
+                option(value := "VALUE")("Values"),
+                option(value := "SLEEPER")("Sleepers"),
+                option(value := "HANDCUFF")("Handcuffs"),
+                option(value := "AVOID")("Avoid"),
+                option(value := "INJURY")("Injury notes"),
               ),
               label(input(`type` := "checkbox", id := "hide-sold"), " hide sold"),
             ),

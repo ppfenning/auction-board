@@ -36,6 +36,21 @@ class NominateTest extends munit.FunSuite:
       roster = Vector.empty,
     )
 
+  test("an AVOID-tagged player is a nomination even at a position still needed") {
+    val teams = Vector(team(0, 17, 184), team(1, 17, 184), team(2, 17, 184))
+    val p = player("jeanty-rb", Pos.RB, value = 24, note = "AVOID at sheet price: ankle")
+    val (score, reason) = Nominate.score(p, teams, 0, Set(Pos.RB))
+    assertEquals(score, 52)
+    assertEquals(reason, "Avoid: 2 rivals can pay $24, AVOID at sheet price: ankle")
+  }
+
+  test("a $20+ QB is bait even with the QB slot open") {
+    val teams = Vector(team(0, 17, 184), team(1, 17, 184))
+    val (score, reason) = Nominate.score(player("allen-qb", Pos.QB, value = 25), teams, 0, Set(Pos.QB))
+    assertEquals(score, 45)
+    assertEquals(reason, "Bait: 1 rivals can pay $25, you are not paying $25 for a QB")
+  }
+
   test("needs ignores FLEX, bench and already-filled slots") {
     val plan = Vector(
       PlanView("QB", 10, Some(5), Some("Josh Allen")), // filled: does not count

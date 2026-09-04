@@ -37,7 +37,7 @@ let loadSeq = 0;
 function el(tag, attrs, ...kids) {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs || {})) {
-    if (k === "class") node.className = v;
+    if (k === "class") { if (v) node.className = v; }
     else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
     else if (v !== null && v !== undefined) node.setAttribute(k, v);
   }
@@ -164,9 +164,17 @@ const NUMERIC_COLS = new Set(["rank", "tier", "value", "target", "max"]);
 
 // Pure core: plain players in, plain players out. No DOM read here, so this
 // is exercisable with array literals.
-function filterSortPlayers(players, query, pos, hideSold, col, dir) {
+// A player's tag is the research label at the front of its note: VALUE,
+// SLEEPER, HANDCUFF or AVOID. "INJURY" matches any other non-empty note.
+function noteTag(note) {
+  const upper = (note || "").toUpperCase();
+  for (const t of ["VALUE", "SLEEPER", "HANDCUFF", "AVOID"]) if (upper.includes(t)) return t;
+  return upper ? "INJURY" : "";
+}
+
+function filterSortPlayers(players, query, pos, hideSold, col, dir, tag) {
   const q = query.trim().toLowerCase();
-  const rows = players.filter((p) => (!q || p.name.toLowerCase().includes(q)) && (!pos || p.pos === pos) && (!hideSold || p.soldTo === null));
+  const rows = players.filter((p) => (!q || p.name.toLowerCase().includes(q)) && (!pos || p.pos === pos) && (!hideSold || p.soldTo === null) && (!tag || noteTag(p.note) === tag));
   if (!col) return rows;
   return rows.slice().sort((a, b) => (NUMERIC_COLS.has(col) ? a[col] - b[col] : String(a[col]).localeCompare(String(b[col]))) * dir);
 }
@@ -180,6 +188,7 @@ function boardRows() {
     document.getElementById("hide-sold").checked,
     sortCol,
     sortDir,
+    document.getElementById("tag-filter").value,
   );
 }
 
@@ -222,10 +231,15 @@ function valueCell(p) {
   const open = (autofocus) => {
     const input = el("input", { type: "number", value: overrideDrafts.has(p.id) ? overrideDrafts.get(p.id) : String(p.value), "data-key": `${p.id}:override` });
     input.addEventListener("input", () => overrideDrafts.set(p.id, input.value));
+    // Close the editor BEFORE the post: post() reloads and re-renders the
+    // board, and a render that still finds p.id in overrideOpen reopens the
+    // editor the user just committed. A failed post reopens it with the draft.
     const commit = async () => {
       const raw = input.value.trim();
+      overrideOpen.delete(p.id);
       const ok = await post("/api/override", { playerId: p.id, value: raw === "" ? null : Number(raw) });
-      if (ok) { overrideOpen.delete(p.id); overrideDrafts.delete(p.id); }
+      if (ok) overrideDrafts.delete(p.id);
+      else { overrideOpen.add(p.id); renderBoard(); }
     };
     const cancel = () => { overrideOpen.delete(p.id); overrideDrafts.delete(p.id); closed(); };
     // Enter commits, Escape cancels. Blur does neither: a stray click away
@@ -242,6 +256,7 @@ function valueCell(p) {
 }
 
 function renderBoard() {
+  if (!view) return; // the search box has autofocus and fires before the first load
   const body = document.getElementById("board-body");
   preserveFocus(body, () => {
     clear(body);
@@ -253,7 +268,7 @@ function renderBoard() {
         "tr", { class: [`t${p.tier}`, sold ? "sold" : null, mine ? "mine" : null].filter(Boolean).join(" ") },
         el("td", null, String(p.rank)), el("td", null, p.pos), el("td", null, p.name), el("td", null, p.team),
         el("td", { class: "tier" }, String(p.tier)), valueCell(p), el("td", null, String(p.target)), el("td", null, String(p.max)),
-        el("td", null, soldCell), el("td", { class: "note" }, p.note),
+        el("td", null, soldCell), el("td", { class: "note" + (noteTag(p.note) ? " tag-" + noteTag(p.note).toLowerCase() : "") }, p.note),
       ));
     }
   });
@@ -263,6 +278,7 @@ function initBoardControls() {
   document.getElementById("search").addEventListener("input", renderBoard);
   document.getElementById("pos-filter").addEventListener("change", renderBoard);
   document.getElementById("hide-sold").addEventListener("change", renderBoard);
+  document.getElementById("tag-filter").addEventListener("change", renderBoard);
   document.addEventListener("keydown", (e) => {
     const tag = document.activeElement.tagName;
     if (e.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA" && tag !== "SELECT") { e.preventDefault(); document.getElementById("search").focus(); }
@@ -283,8 +299,15 @@ let renaming = false;
 
 function renderTeams() {
   const mySelect = document.getElementById("my-team");
-  clear(mySelect);
-  for (const t of view.teams) mySelect.appendChild(el("option", { value: t.index, selected: t.index === view.myTeam ? "selected" : null }, t.name));
+  // Rebuild the select only when the names changed, and never while the
+  // user has it open: a poll that rebuilds an open dropdown closes it.
+  const wanted = view.teams.map((t) => t.name).join(" ");
+  if (document.activeElement !== mySelect && mySelect.getAttribute("data-names") !== wanted) {
+    clear(mySelect);
+    for (const t of view.teams) mySelect.appendChild(el("option", { value: t.index }, t.name));
+    mySelect.setAttribute("data-names", wanted);
+  }
+  if (document.activeElement !== mySelect) mySelect.value = String(view.myTeam);
   if (renaming) return;
   const wrap = document.getElementById("teams");
   clear(wrap);
@@ -302,12 +325,22 @@ function initTeamControls() {
   document.getElementById("my-team").addEventListener("change", (e) => post("/api/me", { team: Number(e.target.value) }));
 
   document.getElementById("rename").addEventListener("click", () => {
+    if (!view || renaming) return;
     renaming = true;
     const grid = document.getElementById("teams");
     const fields = view.teams.map((t) => el("input", { type: "text", value: t.name }));
     const save = el("button", { class: "act" }, "Save");
-    save.addEventListener("click", () => { renaming = false; post("/api/teams", { names: fields.map((f) => f.value) }); });
-    fill(grid, ...fields, save);
+    const cancel = el("button", { class: "act warn" }, "Cancel");
+    // `renaming` stays true until the server has accepted the names: a 400
+    // (a blank name) leaves the form, and the typed names, exactly as they
+    // were, instead of letting the next poll clear them.
+    save.addEventListener("click", async () => {
+      const ok = await post("/api/teams", { names: fields.map((f) => f.value) });
+      if (ok) { renaming = false; renderTeams(); }
+    });
+    cancel.addEventListener("click", () => { renaming = false; renderTeams(); });
+    fill(grid, ...fields, save, " ", cancel);
+    fields[0].focus();
   });
 
   // #reset is never removed: a hidden sibling confirm pair is toggled next
