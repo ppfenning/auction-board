@@ -21,6 +21,13 @@ class AdviceTest extends munit.FunSuite:
     assert(a.reason.contains("RB1 planned $52") && a.reason.contains("walk-away $68"))
   }
 
+  test("the sheet's own cap column is the first walk-away") {
+    assertEquals(byId("malik-nabers-wr").cap, Some(17))
+    assertEquals(advise(withSurplus, "malik-nabers-wr").bid, 17)
+    assertEquals(advise(withSurplus, "omarion-hampton-rb").bid, 35)
+    assertEquals(advise(withSurplus, "marshawn-lloyd-rb").bid, 14)
+  }
+
   test("named walk-aways hold with or without surplus") {
     assertEquals(advise(fresh, "christian-mccaffrey-rb").bid, 47)
     assertEquals(advise(withSurplus, "christian-mccaffrey-rb").bid, 47)
@@ -33,8 +40,10 @@ class AdviceTest extends munit.FunSuite:
     assertEquals(advise(withSurplus, "chase-brown-rb").bid, 39) // tier 3 RB: $39, not MAX + surplus
     assertEquals(advise(withSurplus, "jayden-daniels-qb").bid, 12) // any QB: $12
     assertEquals(advise(withSurplus, "colston-loveland-te").bid, 14)
-    // An unnamed tier: surplus lifts the bid above MAX, up to value + 30% + $2.
-    val t5 = byId("emeka-egbuka-wr")
+    assertEquals(advise(withSurplus, "emeka-egbuka-wr").bid, 21) // the sheet's cap column
+    // An uncapped, unnamed tier: surplus lifts the bid above MAX, up to value + 30% + $2.
+    val t5 = byId("tee-higgins-wr")
+    assertEquals(t5.cap, None)
     val lifted = advise(withSurplus, t5.id)
     assert(lifted.bid > advise(fresh, t5.id).bid, s"fresh ${advise(fresh, t5.id).bid} lifted ${lifted.bid}")
     assertEquals(lifted.bid, math.round(t5.value * 1.3).toInt + 2)

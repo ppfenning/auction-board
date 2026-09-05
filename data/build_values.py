@@ -53,6 +53,25 @@ VALUE_OVERRIDES = {
     "Jordyn Tyson": 1,         # hamstring, out until October
 }
 
+# Per-player caps from docs/strategy.md (Values, Sleepers, Handcuffs, Avoid):
+# the most the board will ever advise for the player, surplus or not.
+CAPS = {
+    "Omarion Hampton": 35, "Cam Skattebo": 24, "Javonte Williams": 22, "Bhayshul Tuten": 16, "Jeremiyah Love": 22,
+    "Jadarian Price": 12, "Emeka Egbuka": 21, "Malik Nabers": 17, "Luther Burden III": 15, "D.J. Moore": 15,
+    "Matthew Golden": 6, "Michael Pittman Jr.": 10, "Justin Herbert": 7, "Jared Goff": 4, "Brock Purdy": 4,
+    "Jaxson Dart": 4, "Dallas Goedert": 5, "Isaiah Likely": 5, "Travis Kelce": 5, "Sam LaPorta": 5,
+    "Mark Andrews": 5, "Juwan Johnson": 2, "MarShawn Lloyd": 14, "Mike Washington Jr.": 5,
+    "Chris Rodriguez Jr.": 4, "Keaton Mitchell": 2, "Dylan Sampson": 2, "Kenneth Gainwell": 4,
+    "De'Zhaun Stribling": 4, "KC Concepcion": 2, "Rashid Shaheed": 2, "Jalen McMillan": 2, "Carnell Tate": 5,
+    "Zachariah Branch": 1, "Tyler Shough": 2, "Kyler Murray": 3, "Baker Mayfield": 3, "Terrance Ferguson": 1,
+    "Blake Corum": 4, "Tank Bigsby": 3, "Kyle Monangai": 3, "Ray Davis": 2, "Rico Dowdle": 3,
+    "Tyler Allgeier": 3, "Jaylen Wright": 2,
+    "Josh Jacobs": 3, "Ashton Jeanty": 24, "Christian McCaffrey": 47, "Derrick Henry": 22, "Kenneth Walker": 22,
+    "Rashee Rice": 24, "Davante Adams": 15, "Mike Evans": 12, "Bo Nix": 3, "Josh Allen": 12,
+    "Jonathan Taylor": 50, "Ja'Marr Chase": 60, "Jaxon Smith-Njigba": 56, "Amon-Ra St. Brown": 54,
+    "Colston Loveland": 14, "Tyler Warren": 11, "Harold Fannin Jr.": 11, "Kyle Pitts": 9,
+}
+
 # Tags the board shows in the Note column: VALUE (pay to value, the room
 # will not), SLEEPER ($1-4 with a path to starting), HANDCUFF, AVOID.
 NOTES = {
@@ -165,6 +184,7 @@ def derive(rows):
             "tier": tier(r["pos"], r["value"]),
             "ppr12": int(float(r["value_12ppr"])),
             "note": NOTES.get(r["player"], ""),
+            "cap": CAPS.get(r["player"], ""),
         }
         for i, r in enumerate(ordered, 1)
     ]

@@ -48,7 +48,7 @@ object Advice:
     * D/ST $3, K $1; and for the tiers the strategy leaves unnamed, value
     * plus 30% plus $2, so surplus can lift a bid but not double it. */
   def walkAway(p: Player, value: Int): Int =
-    hardCaps.get(p.id).getOrElse {
+    p.cap.orElse(hardCaps.get(p.id)).getOrElse {
       p.pos match
         case Pos.QB => tierCaps(Pos.QB)
         case Pos.DST => tierCaps(Pos.DST)

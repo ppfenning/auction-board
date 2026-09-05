@@ -1,241 +1,241 @@
-rank,pos,player,team,value,tier,ppr12,note
-1,RB,Jahmyr Gibbs,DET,57,1,51,
-2,RB,Bijan Robinson,ATL,57,1,51,
-3,WR,Puka Nacua,LAR,51,1,52,"groin soreness in camp, back at practice, expected Wk1"
-4,WR,Ja'Marr Chase,CIN,50,1,51,
-5,WR,Jaxon Smith-Njigba,SEA,47,1,48,
-6,RB,Christian McCaffrey,SF,47,2,43,"AVOID above $47: 450-touch season, age 30, late-Aug 'tightness'"
-7,WR,Amon-Ra St. Brown,DET,45,1,46,
-8,RB,Jonathan Taylor,IND,42,2,38,
-9,WR,Drake London,ATL,36,2,38,
-10,RB,James Cook,BUF,36,3,33,
-11,WR,Justin Jefferson,MIN,32,3,34,
-12,WR,CeeDee Lamb,DAL,32,3,34,
-13,RB,Omarion Hampton,LAC,32,3,30,"VALUE: healthy RB1 upside, Herbert offense; pay to $35"
-14,RB,Saquon Barkley,PHI,32,3,30,
-15,WR,Chris Olave,NO,31,3,33,
-16,RB,Chase Brown,CIN,31,3,29,
-17,RB,De'Von Achane,MIA,30,3,28,
-18,RB,Kenneth Walker,KC,29,4,27,"AVOID above $22: new team, drafted competition"
-19,WR,Rashee Rice,KC,28,3,30,AVOID above $24: target share diluted by additions
-20,WR,Nico Collins,HOU,28,3,30,
-21,RB,Derrick Henry,BAL,28,4,26,"AVOID above $22: age 32, ESPN bust list"
-22,WR,A.J. Brown,NE,27,3,29,
-23,RB,Breece Hall,NYJ,27,4,25,"groin strain, expected Wk1"
-24,WR,Garrett Wilson,NYJ,26,3,28,
-25,TE,Brock Bowers,LV,26,1,28,
-26,RB,Kyren Williams,LAR,25,4,24,
-27,RB,Ashton Jeanty,LV,24,4,29,"AVOID at sheet price: ankle sprain, on 53-man, no return date as of Sep 2; $24 cap"
-28,QB,Josh Allen,BUF,24,1,26,
-29,WR,George Pickens,DAL,24,4,26,
-30,WR,DeVonta Smith,PHI,24,4,26,
-31,TE,Trey McBride,ARI,24,1,26,
-32,RB,Cam Skattebo,NYG,23,5,22,VALUE: top-11 pace wks 3-7 before injury; Dart's guy; pay to $24
-33,RB,Jeremiyah Love,ARI,22,5,25,"high-ankle sprain, 50-50 for Wk1 (Sep 13); no surgery. $22 cap, then a steal"
-34,WR,Zay Flowers,BAL,22,4,25,"quad contusion, day-to-day as of Sep 2"
-35,RB,Javonte Williams,DAL,22,5,21,"VALUE: 252 carries as Dallas's lead back, run-heavy scheme; pay to $22"
-36,RB,Bucky Irving,TB,21,5,20,
-37,WR,Malik Nabers,NYG,20,4,23,"back from ACL; expected Wk1, ramp risk. VALUE at $17"
-38,WR,Emeka Egbuka,TB,19,5,22,"VALUE: toe sprain but expected Wk1; Evans gone, top target for Mayfield"
-39,WR,Tetairoa McMillan,CAR,19,5,22,
-40,WR,Davante Adams,LAR,18,5,21,AVOID above $15: age 33
-41,WR,Jameson Williams,DET,18,5,21,
-42,RB,Travis Etienne,NO,18,5,18,
-43,RB,D'Andre Swift,CHI,18,5,18,
-44,WR,Ladd McConkey,LAC,16,5,19,
-45,WR,Jaylen Waddle,DEN,16,5,19,
-46,RB,Bhayshul Tuten,JAC,16,5,16,VALUE: Jacksonville lead back after Etienne left; 3.2 YAC/att
-47,WR,Tee Higgins,CIN,15,5,18,
-48,RB,Quinshon Judkins,CLE,15,5,15,
-49,WR,Christian Watson,GB,14,5,17,
-50,WR,D.J. Moore,BUF,14,5,17,VALUE: Allen's new primary read; WR6 in 2023
-51,WR,Mike Evans,SF,14,5,17,"AVOID above $12: age 33, new team"
-52,WR,Rome Odunze,CHI,14,5,17,
-53,WR,Luther Burden III,CHI,14,5,17,VALUE: groin (Bears optimistic Wk1); DJ Moore's 85+ targets vacated
-54,WR,Terry McLaurin,WAS,13,5,16,
-55,WR,DK Metcalf,PIT,13,5,16,
-56,TE,Colston Loveland,CHI,13,2,16,
-57,RB,David Montgomery,HOU,13,6,13,
-58,RB,MarShawn Lloyd,GB,12,6,2,SLEEPER: Jacobs' job for months; explosive preseason; pay to $14
-59,WR,Marvin Harrison Jr.,ARI,11,6,14,
-60,TE,Tyler Warren,IND,11,3,14,"groin, likely Wk1; practice ramp questioned"
-61,RB,TreVeyon Henderson,NE,11,6,12,"ankle, expected Wk1"
-62,RB,Jaylen Warren,PIT,11,6,12,
-63,RB,Tony Pollard,TEN,11,6,12,
-64,QB,Drake Maye,NE,10,2,13,
-65,QB,Lamar Jackson,BAL,10,2,13,
-66,QB,Jalen Hurts,PHI,10,2,13,
-67,WR,Michael Pittman Jr.,PIT,10,6,13,
-68,TE,Harold Fannin Jr.,CLE,10,3,13,"hard to beat his 2025 total; fine at $8, not $12"
-69,RB,Jadarian Price,SEA,10,6,11,"SLEEPER: Seattle first-rounder, Walker gone, Charbonnet on PUP; $8-12"
-70,RB,Rhamondre Stevenson,NE,10,6,11,
-71,RB,Chuba Hubbard,CAR,10,6,11,
-72,RB,J.K. Dobbins,DEN,10,6,11,
-73,QB,Joe Burrow,CIN,9,2,12,
-74,WR,Courtland Sutton,DEN,9,6,12,
-75,WR,Jayden Reed,GB,9,6,12,
-76,WR,Alec Pierce,IND,9,6,12,"ankle post-surgery, gradual workload"
-77,RB,Rachaad White,WAS,9,6,10,
-78,TE,Kyle Pitts,ATL,8,3,11,
-79,RB,Rico Dowdle,PIT,8,6,9,HANDCUFF to Warren: 4 of 6 carries inside the 5 were TDs; $2
-80,RB,Jonathon Brooks,CAR,8,6,9,
-81,RB,RJ Harvey,DEN,8,6,9,
-82,WR,Carnell Tate,TEN,7,6,11,
-83,RB,Aaron Jones,MIN,7,7,8,
-84,RB,Kenneth Gainwell,TB,7,7,8,
-85,WR,Jakobi Meyers,JAC,6,7,10,
-86,WR,Chris Godwin,TB,6,7,10,
-87,WR,Parker Washington,JAC,6,7,10,
-88,TE,Travis Kelce,KC,6,4,10,
-89,RB,Jacory Croskey-Merritt,WAS,6,7,7,
-90,RB,Blake Corum,LAR,6,7,7,"HANDCUFF to Kyren: 746 yds, 6 TD, 5.1 YPC in 2025; standalone value; $3-4"
-91,QB,Jayden Daniels,WAS,5,3,9,
-92,QB,Caleb Williams,CHI,5,3,9,
-93,WR,Wan'Dale Robinson,TEN,5,7,9,
-94,WR,Michael Wilson,ARI,5,7,9,
-95,WR,Brian Thomas Jr.,JAC,5,7,9,
-96,WR,Xavier Worthy,KC,5,7,9,
-97,WR,Khalil Shakir,BUF,5,7,9,
-98,WR,Romeo Doubs,NE,5,7,9,
-99,WR,Stefon Diggs,WAS,5,7,9,
-100,TE,Sam LaPorta,DET,5,4,9,
-101,TE,Mark Andrews,BAL,5,4,9,
-102,QB,Dak Prescott,DAL,4,4,8,
-103,WR,Josh Downs,IND,4,7,8,
-104,WR,Jordan Addison,MIN,4,7,8,
-105,WR,Quentin Johnston,LAC,4,7,8,
-106,RB,Kyle Monangai,CHI,4,7,6,"HANDCUFF to Swift: hyperextended knee, week-to-week; 783 yds as rookie"
-107,RB,Jordan Mason,MIN,4,7,6,
-108,RB,Alvin Kamara,NO,4,7,6,
-109,RB,Woody Marks,HOU,4,7,6,
-110,RB,Josh Jacobs,GB,3,7,23,"AVOID: commissioner's exempt list Aug 30, cannot play; hearing Nov 17. $1-3 stash only"
-111,QB,Bo Nix,DEN,3,4,7,AVOID above $3: sophomore-slump risk on every bust list
-112,QB,Justin Herbert,LAC,3,4,7,VALUE QB: QB10 with no tackles in 2025; Alt+Slater back; $5-7
-113,QB,Brock Purdy,SF,3,4,7,
-114,WR,Matthew Golden,GB,3,7,7,VALUE: 138 GB targets vacated (Doubs/Wicks/Heath); 4.29 speed
-115,WR,KC Concepcion,CLE,3,7,7,"SLEEPER: Browns rookie, elite YAC, Monken moving him around; $2"
-116,WR,De'Zhaun Stribling,SF,3,7,7,SLEEPER: SF WR2 after Pearsall/Kirk/Evans injuries; camp star; $2-4
-117,TE,Tucker Kraft,GB,3,4,7,"ACL return, expected full go Wk1"
-118,RB,Tyjae Spears,TEN,3,7,5,
-119,RB,Dylan Sampson,CLE,3,7,5,SLEEPER: Monken's pass-catching back behind Judkins; $2
-120,RB,Chris Rodriguez Jr.,JAC,3,7,5,"SLEEPER: Coen's Kentucky back, co-starter with Tuten, red-zone role; $2-4"
-121,RB,Tyrone Tracy Jr.,NYG,3,7,5,
-122,QB,Jaxson Dart,NYG,2,4,6,
-123,QB,Jared Goff,DET,2,4,6,"VALUE QB: 4,564 yds, 30+ TD every year, priced QB16; $3-4"
-124,WR,Makai Lemon,PHI,2,8,6,
-125,WR,Rashid Shaheed,SEA,2,8,6,"SLEEPER: $51M deal, Darnold rapport, more than a deep threat; $2"
-126,WR,Deebo Samuel,SF,2,8,6,
-127,TE,Jake Ferguson,DAL,2,5,6,
-128,RB,Isiah Pacheco,DET,2,8,4,
-129,DST,Denver,DEN,2,1,2,
-130,DST,Houston,HOU,2,1,2,
-131,WR,Jordyn Tyson,NO,1,8,6,hamstring - out until October
-132,QB,Trevor Lawrence,JAC,1,5,5,
-133,QB,Matthew Stafford,LAR,1,5,5,
-134,RB,Zach Charbonnet,SEA,1,8,5,reserve/PUP - out first 4 games
-135,WR,Jerry Jeudy,CLE,1,8,5,
-136,WR,Keenan Allen,IND,1,8,5,
-137,WR,Tre Tucker,LV,1,8,5,
-138,WR,Jalen Coker,CAR,1,8,5,
-139,WR,Jalen McMillan,TB,1,8,5,"SLEEPER: Mayfield chemistry, Robinson opening the offense; $2"
-140,TE,Dallas Goedert,PHI,1,5,5,"VALUE TE: TE4 in 2025, AJ Brown gone; $3-5"
-141,TE,George Kittle,SF,1,5,5,"Achilles return; activated from PUP, individual work only as of Sep 2"
-142,TE,Dalton Schultz,HOU,1,5,5,
-143,WR,Rashod Bateman,BAL,1,8,4,
-144,WR,Calvin Ridley,TEN,1,8,4,
-145,WR,Adonai Mitchell,NYJ,1,8,4,
-146,WR,Germie Bernard,PIT,1,8,4,
-147,WR,Jalen Nailor,LV,1,8,4,
-148,TE,Dalton Kincaid,BUF,1,5,4,
-149,QB,Patrick Mahomes,KC,1,5,3,
-150,QB,Tyler Shough,NO,1,5,3,"SLEEPER QB: QB9 from Wk10 on, rushing upside, Moore offense; $1-2"
-151,RB,Brian Robinson Jr.,ATL,1,8,3,
-152,RB,Justice Hill,BAL,1,8,3,
-153,RB,Tyler Allgeier,ARI,1,8,3,HANDCUFF to Love: early-season role if Love sits; 8 TD in 2025; $2-3
-154,RB,Keaton Mitchell,LAC,1,8,3,"SLEEPER: 4.37 speed, McDaniel scheme, behind Hampton; $2"
-155,RB,Braelon Allen,NYJ,1,8,3,
-156,RB,Tank Bigsby,PHI,1,8,3,"HANDCUFF to Saquon: 1st in YAC/att, 2nd missed-tackle rate; $2-3"
-157,RB,Ray Davis,BUF,1,8,3,HANDCUFF to Cook: majority of an elite rushing offense if Cook sits; $2
-158,WR,Malik Washington,MIA,1,8,3,
-159,WR,Ryan Flournoy,DAL,1,8,3,
-160,WR,Jauan Jennings,MIN,1,8,3,
-161,WR,Denzel Boston,CLE,1,8,3,
-162,WR,Caleb Douglas,MIA,1,8,3,
-163,WR,Xavier Hutchinson,HOU,1,8,3,
-164,WR,Isaac TeSlaa,DET,1,8,3,
-165,TE,Hunter Henry,NE,1,5,3,
-166,TE,Isaiah Likely,NYG,1,5,3,"VALUE TE: $40M deal, Harbaugh reunion, NYG second read; $3-5"
-167,TE,Juwan Johnson,NO,1,5,3,"VALUE TE: 102 targets, 889 yds in 2025; Tyson out; $2-3"
-168,QB,Kyler Murray,MIN,1,5,2,"SLEEPER QB: O'Connell scheme, Jefferson/Addison; $2-3"
-169,QB,Malik Willis,MIA,1,5,2,
-170,QB,Sam Darnold,SEA,1,5,2,
-171,RB,Samaje Perine,CIN,1,8,2,
-172,RB,George Holani,SEA,1,8,2,
-173,RB,Kimani Vidal,LAC,1,8,2,
-174,WR,Travis Hunter,JAC,1,8,2,
-175,WR,Devaughn Vele,NO,1,8,2,
-176,TE,Pat Freiermuth,PIT,1,5,2,
-177,TE,Greg Dulcich,MIA,1,5,2,
-178,QB,Baker Mayfield,TB,1,5,1,SLEEPER QB: priced QB12+ after a down year; $2-3
-179,QB,Jordan Love,GB,1,5,1,
-180,WR,Xavier Legette,CAR,1,8,1,
-181,RB,Ty Johnson,BUF,1,8,1,
-182,TE,Brenton Strange,JAC,1,5,1,
-183,K,Brandon Aubrey,DAL,1,2,1,
-184,RB,Mike Washington Jr.,LV,1,8,1,"SLEEPER: 10.0 RAS, 168 preseason yds; Jeanty's ankle; $3-5"
-185,RB,Jonah Coleman,DEN,1,8,1,
-186,WR,Cooper Kupp,SEA,1,8,1,
-187,WR,Darius Slayton,NYG,1,8,1,
-188,WR,Jaylin Noel,HOU,1,8,1,
-189,RB,Jaydon Blue,DAL,1,8,1,
-190,K,Cameron Dicker,LAC,1,2,1,
-191,DST,Seattle,SEA,1,2,1,
-192,RB,Sean Tucker,TB,1,8,1,
-193,WR,Tre Harris,LAC,1,8,1,
-194,WR,Pat Bryant,DEN,1,8,1,
-195,WR,Omar Cooper Jr.,NYJ,1,8,1,
-196,RB,Emari Demercado,KC,1,8,1,
-197,DST,Minnesota,MIN,1,2,1,
-198,WR,Tyquan Thornton,KC,1,8,1,
-199,WR,Ja'Kobi Lane,BAL,1,8,1,
-200,DST,Pittsburgh,PIT,1,2,1,
-201,DST,Los Angeles Rams,LAR,1,2,1,
-202,DST,Los Angeles Chargers,LAC,1,2,1,
-203,DST,Philadelphia,PHI,1,2,1,
-204,DST,New England,NE,1,2,1,
-205,DST,Detroit,DET,1,2,1,
-206,DST,Buffalo,BUF,1,2,1,
-207,DST,Jacksonville,JAC,1,2,1,
-208,K,Ka'imi Fairbairn,HOU,1,2,1,
-209,K,Jason Myers,SEA,1,2,1,
-210,K,Wil Lutz,DEN,1,2,1,
-211,K,Chase McLaughlin,TB,1,2,1,
-212,K,Harrison Butker,KC,1,2,1,
-213,K,Eddy Pineiro,SF,1,2,1,
-214,K,Tyler Loop,BAL,1,2,1,
-215,K,Jake Bates,DET,1,2,1,
-216,K,Cam Little,JAC,1,2,1,
-217,K,Will Reichard,MIN,1,2,1,
-218,TE,Terrance Ferguson,LAR,1,5,1,"SLEEPER TE: 18.3 aDOT rookie, McVay big-slot role; $1"
-219,WR,Zachariah Branch,ATL,1,8,1,"SLEEPER: 4.35 speed, screen game, easy ATL depth chart; $1"
-220,RB,Jaylen Wright,MIA,1,8,1,HANDCUFF to Achane: fantasy-relevant the week Achane misses; $1-2
-221,DST,Arizona,ARI,1,2,1,
-222,DST,Atlanta,ATL,1,2,1,
-223,DST,Baltimore,BAL,1,2,1,
-224,DST,Carolina,CAR,1,2,1,
-225,DST,Chicago,CHI,1,2,1,
-226,DST,Cincinnati,CIN,1,2,1,
-227,DST,Cleveland,CLE,1,2,1,
-228,DST,Dallas,DAL,1,2,1,
-229,DST,Green Bay,GB,1,2,1,
-230,DST,Indianapolis,IND,1,2,1,
-231,DST,Kansas City,KC,1,2,1,
-232,DST,Las Vegas,LV,1,2,1,
-233,DST,Miami,MIA,1,2,1,
-234,DST,New Orleans,NO,1,2,1,
-235,DST,New York Giants,NYG,1,2,1,
-236,DST,New York Jets,NYJ,1,2,1,
-237,DST,San Francisco,SF,1,2,1,
-238,DST,Tampa Bay,TB,1,2,1,
-239,DST,Tennessee,TEN,1,2,1,
-240,DST,Washington,WAS,1,2,1,
+rank,pos,player,team,value,tier,ppr12,note,cap
+1,RB,Jahmyr Gibbs,DET,57,1,51,,
+2,RB,Bijan Robinson,ATL,57,1,51,,
+3,WR,Puka Nacua,LAR,51,1,52,"groin soreness in camp, back at practice, expected Wk1",
+4,WR,Ja'Marr Chase,CIN,50,1,51,,60
+5,WR,Jaxon Smith-Njigba,SEA,47,1,48,,56
+6,RB,Christian McCaffrey,SF,47,2,43,"AVOID above $47: 450-touch season, age 30, late-Aug 'tightness'",47
+7,WR,Amon-Ra St. Brown,DET,45,1,46,,54
+8,RB,Jonathan Taylor,IND,42,2,38,,50
+9,WR,Drake London,ATL,36,2,38,,
+10,RB,James Cook,BUF,36,3,33,,
+11,WR,Justin Jefferson,MIN,32,3,34,,
+12,WR,CeeDee Lamb,DAL,32,3,34,,
+13,RB,Omarion Hampton,LAC,32,3,30,"VALUE: healthy RB1 upside, Herbert offense; pay to $35",35
+14,RB,Saquon Barkley,PHI,32,3,30,,
+15,WR,Chris Olave,NO,31,3,33,,
+16,RB,Chase Brown,CIN,31,3,29,,
+17,RB,De'Von Achane,MIA,30,3,28,,
+18,RB,Kenneth Walker,KC,29,4,27,"AVOID above $22: new team, drafted competition",22
+19,WR,Rashee Rice,KC,28,3,30,AVOID above $24: target share diluted by additions,24
+20,WR,Nico Collins,HOU,28,3,30,,
+21,RB,Derrick Henry,BAL,28,4,26,"AVOID above $22: age 32, ESPN bust list",22
+22,WR,A.J. Brown,NE,27,3,29,,
+23,RB,Breece Hall,NYJ,27,4,25,"groin strain, expected Wk1",
+24,WR,Garrett Wilson,NYJ,26,3,28,,
+25,TE,Brock Bowers,LV,26,1,28,,
+26,RB,Kyren Williams,LAR,25,4,24,,
+27,RB,Ashton Jeanty,LV,24,4,29,"AVOID at sheet price: ankle sprain, on 53-man, no return date as of Sep 2; $24 cap",24
+28,QB,Josh Allen,BUF,24,1,26,,12
+29,WR,George Pickens,DAL,24,4,26,,
+30,WR,DeVonta Smith,PHI,24,4,26,,
+31,TE,Trey McBride,ARI,24,1,26,,
+32,RB,Cam Skattebo,NYG,23,5,22,VALUE: top-11 pace wks 3-7 before injury; Dart's guy; pay to $24,24
+33,RB,Jeremiyah Love,ARI,22,5,25,"high-ankle sprain, 50-50 for Wk1 (Sep 13); no surgery. $22 cap, then a steal",22
+34,WR,Zay Flowers,BAL,22,4,25,"quad contusion, day-to-day as of Sep 2",
+35,RB,Javonte Williams,DAL,22,5,21,"VALUE: 252 carries as Dallas's lead back, run-heavy scheme; pay to $22",22
+36,RB,Bucky Irving,TB,21,5,20,,
+37,WR,Malik Nabers,NYG,20,4,23,"back from ACL; expected Wk1, ramp risk. VALUE at $17",17
+38,WR,Emeka Egbuka,TB,19,5,22,"VALUE: toe sprain but expected Wk1; Evans gone, top target for Mayfield",21
+39,WR,Tetairoa McMillan,CAR,19,5,22,,
+40,WR,Davante Adams,LAR,18,5,21,AVOID above $15: age 33,15
+41,WR,Jameson Williams,DET,18,5,21,,
+42,RB,Travis Etienne,NO,18,5,18,,
+43,RB,D'Andre Swift,CHI,18,5,18,,
+44,WR,Ladd McConkey,LAC,16,5,19,,
+45,WR,Jaylen Waddle,DEN,16,5,19,,
+46,RB,Bhayshul Tuten,JAC,16,5,16,VALUE: Jacksonville lead back after Etienne left; 3.2 YAC/att,16
+47,WR,Tee Higgins,CIN,15,5,18,,
+48,RB,Quinshon Judkins,CLE,15,5,15,,
+49,WR,Christian Watson,GB,14,5,17,,
+50,WR,D.J. Moore,BUF,14,5,17,VALUE: Allen's new primary read; WR6 in 2023,15
+51,WR,Mike Evans,SF,14,5,17,"AVOID above $12: age 33, new team",12
+52,WR,Rome Odunze,CHI,14,5,17,,
+53,WR,Luther Burden III,CHI,14,5,17,VALUE: groin (Bears optimistic Wk1); DJ Moore's 85+ targets vacated,15
+54,WR,Terry McLaurin,WAS,13,5,16,,
+55,WR,DK Metcalf,PIT,13,5,16,,
+56,TE,Colston Loveland,CHI,13,2,16,,14
+57,RB,David Montgomery,HOU,13,6,13,,
+58,RB,MarShawn Lloyd,GB,12,6,2,SLEEPER: Jacobs' job for months; explosive preseason; pay to $14,14
+59,WR,Marvin Harrison Jr.,ARI,11,6,14,,
+60,TE,Tyler Warren,IND,11,3,14,"groin, likely Wk1; practice ramp questioned",11
+61,RB,TreVeyon Henderson,NE,11,6,12,"ankle, expected Wk1",
+62,RB,Jaylen Warren,PIT,11,6,12,,
+63,RB,Tony Pollard,TEN,11,6,12,,
+64,QB,Drake Maye,NE,10,2,13,,
+65,QB,Lamar Jackson,BAL,10,2,13,,
+66,QB,Jalen Hurts,PHI,10,2,13,,
+67,WR,Michael Pittman Jr.,PIT,10,6,13,,10
+68,TE,Harold Fannin Jr.,CLE,10,3,13,"hard to beat his 2025 total; fine at $8, not $12",11
+69,RB,Jadarian Price,SEA,10,6,11,"SLEEPER: Seattle first-rounder, Walker gone, Charbonnet on PUP; $8-12",12
+70,RB,Rhamondre Stevenson,NE,10,6,11,,
+71,RB,Chuba Hubbard,CAR,10,6,11,,
+72,RB,J.K. Dobbins,DEN,10,6,11,,
+73,QB,Joe Burrow,CIN,9,2,12,,
+74,WR,Courtland Sutton,DEN,9,6,12,,
+75,WR,Jayden Reed,GB,9,6,12,,
+76,WR,Alec Pierce,IND,9,6,12,"ankle post-surgery, gradual workload",
+77,RB,Rachaad White,WAS,9,6,10,,
+78,TE,Kyle Pitts,ATL,8,3,11,,9
+79,RB,Rico Dowdle,PIT,8,6,9,HANDCUFF to Warren: 4 of 6 carries inside the 5 were TDs; $2,3
+80,RB,Jonathon Brooks,CAR,8,6,9,,
+81,RB,RJ Harvey,DEN,8,6,9,,
+82,WR,Carnell Tate,TEN,7,6,11,,5
+83,RB,Aaron Jones,MIN,7,7,8,,
+84,RB,Kenneth Gainwell,TB,7,7,8,,4
+85,WR,Jakobi Meyers,JAC,6,7,10,,
+86,WR,Chris Godwin,TB,6,7,10,,
+87,WR,Parker Washington,JAC,6,7,10,,
+88,TE,Travis Kelce,KC,6,4,10,,5
+89,RB,Jacory Croskey-Merritt,WAS,6,7,7,,
+90,RB,Blake Corum,LAR,6,7,7,"HANDCUFF to Kyren: 746 yds, 6 TD, 5.1 YPC in 2025; standalone value; $3-4",4
+91,QB,Jayden Daniels,WAS,5,3,9,,
+92,QB,Caleb Williams,CHI,5,3,9,,
+93,WR,Wan'Dale Robinson,TEN,5,7,9,,
+94,WR,Michael Wilson,ARI,5,7,9,,
+95,WR,Brian Thomas Jr.,JAC,5,7,9,,
+96,WR,Xavier Worthy,KC,5,7,9,,
+97,WR,Khalil Shakir,BUF,5,7,9,,
+98,WR,Romeo Doubs,NE,5,7,9,,
+99,WR,Stefon Diggs,WAS,5,7,9,,
+100,TE,Sam LaPorta,DET,5,4,9,,5
+101,TE,Mark Andrews,BAL,5,4,9,,5
+102,QB,Dak Prescott,DAL,4,4,8,,
+103,WR,Josh Downs,IND,4,7,8,,
+104,WR,Jordan Addison,MIN,4,7,8,,
+105,WR,Quentin Johnston,LAC,4,7,8,,
+106,RB,Kyle Monangai,CHI,4,7,6,"HANDCUFF to Swift: hyperextended knee, week-to-week; 783 yds as rookie",3
+107,RB,Jordan Mason,MIN,4,7,6,,
+108,RB,Alvin Kamara,NO,4,7,6,,
+109,RB,Woody Marks,HOU,4,7,6,,
+110,RB,Josh Jacobs,GB,3,7,23,"AVOID: commissioner's exempt list Aug 30, cannot play; hearing Nov 17. $1-3 stash only",3
+111,QB,Bo Nix,DEN,3,4,7,AVOID above $3: sophomore-slump risk on every bust list,3
+112,QB,Justin Herbert,LAC,3,4,7,VALUE QB: QB10 with no tackles in 2025; Alt+Slater back; $5-7,7
+113,QB,Brock Purdy,SF,3,4,7,,4
+114,WR,Matthew Golden,GB,3,7,7,VALUE: 138 GB targets vacated (Doubs/Wicks/Heath); 4.29 speed,6
+115,WR,KC Concepcion,CLE,3,7,7,"SLEEPER: Browns rookie, elite YAC, Monken moving him around; $2",2
+116,WR,De'Zhaun Stribling,SF,3,7,7,SLEEPER: SF WR2 after Pearsall/Kirk/Evans injuries; camp star; $2-4,4
+117,TE,Tucker Kraft,GB,3,4,7,"ACL return, expected full go Wk1",
+118,RB,Tyjae Spears,TEN,3,7,5,,
+119,RB,Dylan Sampson,CLE,3,7,5,SLEEPER: Monken's pass-catching back behind Judkins; $2,2
+120,RB,Chris Rodriguez Jr.,JAC,3,7,5,"SLEEPER: Coen's Kentucky back, co-starter with Tuten, red-zone role; $2-4",4
+121,RB,Tyrone Tracy Jr.,NYG,3,7,5,,
+122,QB,Jaxson Dart,NYG,2,4,6,,4
+123,QB,Jared Goff,DET,2,4,6,"VALUE QB: 4,564 yds, 30+ TD every year, priced QB16; $3-4",4
+124,WR,Makai Lemon,PHI,2,8,6,,
+125,WR,Rashid Shaheed,SEA,2,8,6,"SLEEPER: $51M deal, Darnold rapport, more than a deep threat; $2",2
+126,WR,Deebo Samuel,SF,2,8,6,,
+127,TE,Jake Ferguson,DAL,2,5,6,,
+128,RB,Isiah Pacheco,DET,2,8,4,,
+129,DST,Denver,DEN,2,1,2,,
+130,DST,Houston,HOU,2,1,2,,
+131,WR,Jordyn Tyson,NO,1,8,6,hamstring - out until October,
+132,QB,Trevor Lawrence,JAC,1,5,5,,
+133,QB,Matthew Stafford,LAR,1,5,5,,
+134,RB,Zach Charbonnet,SEA,1,8,5,reserve/PUP - out first 4 games,
+135,WR,Jerry Jeudy,CLE,1,8,5,,
+136,WR,Keenan Allen,IND,1,8,5,,
+137,WR,Tre Tucker,LV,1,8,5,,
+138,WR,Jalen Coker,CAR,1,8,5,,
+139,WR,Jalen McMillan,TB,1,8,5,"SLEEPER: Mayfield chemistry, Robinson opening the offense; $2",2
+140,TE,Dallas Goedert,PHI,1,5,5,"VALUE TE: TE4 in 2025, AJ Brown gone; $3-5",5
+141,TE,George Kittle,SF,1,5,5,"Achilles return; activated from PUP, individual work only as of Sep 2",
+142,TE,Dalton Schultz,HOU,1,5,5,,
+143,WR,Rashod Bateman,BAL,1,8,4,,
+144,WR,Calvin Ridley,TEN,1,8,4,,
+145,WR,Adonai Mitchell,NYJ,1,8,4,,
+146,WR,Germie Bernard,PIT,1,8,4,,
+147,WR,Jalen Nailor,LV,1,8,4,,
+148,TE,Dalton Kincaid,BUF,1,5,4,,
+149,QB,Patrick Mahomes,KC,1,5,3,,
+150,QB,Tyler Shough,NO,1,5,3,"SLEEPER QB: QB9 from Wk10 on, rushing upside, Moore offense; $1-2",2
+151,RB,Brian Robinson Jr.,ATL,1,8,3,,
+152,RB,Justice Hill,BAL,1,8,3,,
+153,RB,Tyler Allgeier,ARI,1,8,3,HANDCUFF to Love: early-season role if Love sits; 8 TD in 2025; $2-3,3
+154,RB,Keaton Mitchell,LAC,1,8,3,"SLEEPER: 4.37 speed, McDaniel scheme, behind Hampton; $2",2
+155,RB,Braelon Allen,NYJ,1,8,3,,
+156,RB,Tank Bigsby,PHI,1,8,3,"HANDCUFF to Saquon: 1st in YAC/att, 2nd missed-tackle rate; $2-3",3
+157,RB,Ray Davis,BUF,1,8,3,HANDCUFF to Cook: majority of an elite rushing offense if Cook sits; $2,2
+158,WR,Malik Washington,MIA,1,8,3,,
+159,WR,Ryan Flournoy,DAL,1,8,3,,
+160,WR,Jauan Jennings,MIN,1,8,3,,
+161,WR,Denzel Boston,CLE,1,8,3,,
+162,WR,Caleb Douglas,MIA,1,8,3,,
+163,WR,Xavier Hutchinson,HOU,1,8,3,,
+164,WR,Isaac TeSlaa,DET,1,8,3,,
+165,TE,Hunter Henry,NE,1,5,3,,
+166,TE,Isaiah Likely,NYG,1,5,3,"VALUE TE: $40M deal, Harbaugh reunion, NYG second read; $3-5",5
+167,TE,Juwan Johnson,NO,1,5,3,"VALUE TE: 102 targets, 889 yds in 2025; Tyson out; $2-3",2
+168,QB,Kyler Murray,MIN,1,5,2,"SLEEPER QB: O'Connell scheme, Jefferson/Addison; $2-3",3
+169,QB,Malik Willis,MIA,1,5,2,,
+170,QB,Sam Darnold,SEA,1,5,2,,
+171,RB,Samaje Perine,CIN,1,8,2,,
+172,RB,George Holani,SEA,1,8,2,,
+173,RB,Kimani Vidal,LAC,1,8,2,,
+174,WR,Travis Hunter,JAC,1,8,2,,
+175,WR,Devaughn Vele,NO,1,8,2,,
+176,TE,Pat Freiermuth,PIT,1,5,2,,
+177,TE,Greg Dulcich,MIA,1,5,2,,
+178,QB,Baker Mayfield,TB,1,5,1,SLEEPER QB: priced QB12+ after a down year; $2-3,3
+179,QB,Jordan Love,GB,1,5,1,,
+180,WR,Xavier Legette,CAR,1,8,1,,
+181,RB,Ty Johnson,BUF,1,8,1,,
+182,TE,Brenton Strange,JAC,1,5,1,,
+183,K,Brandon Aubrey,DAL,1,2,1,,
+184,RB,Mike Washington Jr.,LV,1,8,1,"SLEEPER: 10.0 RAS, 168 preseason yds; Jeanty's ankle; $3-5",5
+185,RB,Jonah Coleman,DEN,1,8,1,,
+186,WR,Cooper Kupp,SEA,1,8,1,,
+187,WR,Darius Slayton,NYG,1,8,1,,
+188,WR,Jaylin Noel,HOU,1,8,1,,
+189,RB,Jaydon Blue,DAL,1,8,1,,
+190,K,Cameron Dicker,LAC,1,2,1,,
+191,DST,Seattle,SEA,1,2,1,,
+192,RB,Sean Tucker,TB,1,8,1,,
+193,WR,Tre Harris,LAC,1,8,1,,
+194,WR,Pat Bryant,DEN,1,8,1,,
+195,WR,Omar Cooper Jr.,NYJ,1,8,1,,
+196,RB,Emari Demercado,KC,1,8,1,,
+197,DST,Minnesota,MIN,1,2,1,,
+198,WR,Tyquan Thornton,KC,1,8,1,,
+199,WR,Ja'Kobi Lane,BAL,1,8,1,,
+200,DST,Pittsburgh,PIT,1,2,1,,
+201,DST,Los Angeles Rams,LAR,1,2,1,,
+202,DST,Los Angeles Chargers,LAC,1,2,1,,
+203,DST,Philadelphia,PHI,1,2,1,,
+204,DST,New England,NE,1,2,1,,
+205,DST,Detroit,DET,1,2,1,,
+206,DST,Buffalo,BUF,1,2,1,,
+207,DST,Jacksonville,JAC,1,2,1,,
+208,K,Ka'imi Fairbairn,HOU,1,2,1,,
+209,K,Jason Myers,SEA,1,2,1,,
+210,K,Wil Lutz,DEN,1,2,1,,
+211,K,Chase McLaughlin,TB,1,2,1,,
+212,K,Harrison Butker,KC,1,2,1,,
+213,K,Eddy Pineiro,SF,1,2,1,,
+214,K,Tyler Loop,BAL,1,2,1,,
+215,K,Jake Bates,DET,1,2,1,,
+216,K,Cam Little,JAC,1,2,1,,
+217,K,Will Reichard,MIN,1,2,1,,
+218,TE,Terrance Ferguson,LAR,1,5,1,"SLEEPER TE: 18.3 aDOT rookie, McVay big-slot role; $1",1
+219,WR,Zachariah Branch,ATL,1,8,1,"SLEEPER: 4.35 speed, screen game, easy ATL depth chart; $1",1
+220,RB,Jaylen Wright,MIA,1,8,1,HANDCUFF to Achane: fantasy-relevant the week Achane misses; $1-2,2
+221,DST,Arizona,ARI,1,2,1,,
+222,DST,Atlanta,ATL,1,2,1,,
+223,DST,Baltimore,BAL,1,2,1,,
+224,DST,Carolina,CAR,1,2,1,,
+225,DST,Chicago,CHI,1,2,1,,
+226,DST,Cincinnati,CIN,1,2,1,,
+227,DST,Cleveland,CLE,1,2,1,,
+228,DST,Dallas,DAL,1,2,1,,
+229,DST,Green Bay,GB,1,2,1,,
+230,DST,Indianapolis,IND,1,2,1,,
+231,DST,Kansas City,KC,1,2,1,,
+232,DST,Las Vegas,LV,1,2,1,,
+233,DST,Miami,MIA,1,2,1,,
+234,DST,New Orleans,NO,1,2,1,,
+235,DST,New York Giants,NYG,1,2,1,,
+236,DST,New York Jets,NYJ,1,2,1,,
+237,DST,San Francisco,SF,1,2,1,,
+238,DST,Tampa Bay,TB,1,2,1,,
+239,DST,Tennessee,TEN,1,2,1,,
+240,DST,Washington,WAS,1,2,1,,

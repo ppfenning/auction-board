@@ -25,6 +25,8 @@ final case class Player(
     value: Int,
     tier: Int,
     note: String,
+    /** The strategy's own ceiling for this player, when it names one. */
+    cap: Option[Int] = None,
 ) derives ReadWriter
 
 /** A lineup slot and which positions may fill it. Bench slots accept anything. */
@@ -174,7 +176,7 @@ final case class View(
 // ── CSV ──────────────────────────────────────────────────────────────────────
 
 object Csv:
-  /** Parse data/players.csv text. Header: rank,pos,player,team,value,tier,ppr12,note.
+  /** Parse data/players.csv text. Header: rank,pos,player,team,value,tier,ppr12,note[,cap].
     * A quoted field may contain commas. Rows that do not parse are dropped, not
     * raised: a bad row in a 217-row sheet is a row to fix, not a reason for
     * the board to refuse to start. */
@@ -191,7 +193,7 @@ object Csv:
         pos <- Pos.parse(f(1))
         value <- f(4).toIntOption
         tier <- f(5).toIntOption
-      yield Player(id = slug(f(2), f(1)), rank = rank, pos = pos, name = f(2), team = f(3), value = value, tier = tier, note = f(7))
+      yield Player(id = slug(f(2), f(1)), rank = rank, pos = pos, name = f(2), team = f(3), value = value, tier = tier, note = f(7), cap = f.lift(8).flatMap(_.trim.toIntOption))
 
   def slug(name: String, pos: String): String =
     name.toLowerCase.replaceAll("[^a-z0-9]+", "-").stripSuffix("-") + "-" + pos.toLowerCase
