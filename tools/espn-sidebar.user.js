@@ -5,14 +5,13 @@
 // @description  Watches the ESPN auction room, records sales to the local board, and shows what to bid.
 // @match        https://fantasy.espn.com/football/draft*
 // @match        https://fantasy.espn.com/*draft*
-// @grant        GM_xmlhttpRequest
-// @connect      localhost
+// @grant        none
 // @run-at       document-idle
 // ==/UserScript==
 
-// SKELETON. The three functions marked GUESS read ESPN's DOM and were
-// written without seeing the 2026 room; the Saturday mock draft fixes them.
-// Everything else — the board calls, the sidebar, the dedupe — is real.
+// Selectors fixed against the live 2026 room on draft night (2026-09-06).
+// Runs under Tampermonkey or pasted straight into the room tab's console
+// (or injected by a Claude in Chrome session): it only needs fetch.
 //
 // Flow: a MutationObserver marks the page dirty; a 1s tick reads the pick
 // history and the player on the block. Each pick the board does not yet
@@ -26,53 +25,52 @@
 // anything in the room.
 
 (() => {
+  if (window.__ab) return;
   const BOARD = "http://localhost:8080";
   const TICK_MS = 1000;
   const VIEW_MS = 5000;
   const CONFIDENT = 0.8;
 
-  // ── board calls (GM_xmlhttpRequest: the room's CSP cannot block them) ──
-  const call = (method, path, body) =>
-    new Promise((resolve) => {
-      GM_xmlhttpRequest({
-        method,
-        url: BOARD + path,
-        headers: { "content-type": "application/json" },
-        data: body ? JSON.stringify(body) : undefined,
-        onload: (r) => { let data = null; try { data = JSON.parse(r.responseText); } catch (e) { data = { error: r.responseText }; } resolve({ ok: r.status < 300, status: r.status, data }); },
-        onerror: () => resolve({ ok: false, status: 0, data: { error: "board unreachable at " + BOARD } }),
-      });
-    });
+  // ── board calls (fetch; the board answers CORS, and Chrome allows
+  // http://localhost from an https page) ────────────────────────────────
+  const call = async (method, path, body) => {
+    try {
+      const r = await fetch(BOARD + path, { method, mode: "cors", headers: body ? { "content-type": "application/json" } : {}, body: body ? JSON.stringify(body) : undefined });
+      const t = await r.text(); let data; try { data = JSON.parse(t); } catch (e) { data = { error: t }; }
+      return { ok: r.status < 300, status: r.status, data };
+    } catch (e) { return { ok: false, status: 0, data: { error: "board unreachable: " + e.message } }; }
+  };
+  const txt = (el, sel) => (((el && el.querySelector(sel)) || {}).textContent || "");
+  const normPos = (s) => s.trim().toUpperCase().replace("D/ST", "DST");
 
-  // ── GUESS: the completed sales, oldest first ─────────────────────────
-  // Return [{name, pos, team, price}] exactly as ESPN prints them.
+  // ── the completed sales, oldest first (the Activity feed, 2026 room) ──
+  // Each pick is a <li> under ul.pa3 with .playerinfo__playername /
+  // .playerinfo__playerpos and a .pick-info of "$43 - Gang Green".
   function readPicks() {
-    const rows = Array.from(document.querySelectorAll('[class*="pick-history"] [class*="row"], [data-testid*="pick"] tr'));
-    return rows.map((row) => {
-      const text = (sel) => ((row.querySelector(sel) || {}).textContent || "").trim();
-      const name = text('[class*="player-name"], [class*="playerName"], .name');
-      const pos = text('[class*="position"], .pos').replace(/[^A-Z/]/g, "").replace("D/ST", "DST");
-      const team = text('[class*="team-name"], [class*="teamName"], .team');
-      const price = Number((text('[class*="price"], [class*="bid"], .price').match(/\d+/) || [0])[0]);
+    return Array.from(document.querySelectorAll("ul.pa3 > li")).filter((li) => li.querySelector(".playerinfo__playername")).map((li) => {
+      const name = txt(li, ".playerinfo__playername").trim();
+      const pos = normPos(txt(li, ".playerinfo__playerpos"));
+      const info = txt(li, ".pick-info").trim();
+      const price = Number((info.match(/\$\s*(\d+)/) || [0, 0])[1]);
+      const team = info.replace(/^\s*\$\s*\d+\s*-?\s*/, "").replace(/^-\s*/, "").trim();
       return { name, pos, team, price };
-    }).filter((p) => p.name && p.price > 0);
+    }).filter((p) => p.name && p.price > 0 && p.team);
   }
 
-  // ── GUESS: the player on the block and the current high bid ─────────
+  // ── the player on the block: .player-selected, offer in .current-amount ─
   function readBlock() {
-    const panel = document.querySelector('[class*="auction"], [class*="on-the-block"], [data-testid*="nomination"]');
-    if (!panel) return null;
-    const text = (sel) => ((panel.querySelector(sel) || {}).textContent || "").trim();
-    const name = text('[class*="player-name"], [class*="playerName"], .name');
-    const pos = text('[class*="position"], .pos').replace(/[^A-Z/]/g, "").replace("D/ST", "DST");
-    const bid = Number((text('[class*="current-bid"], [class*="bid"], .bid').match(/\d+/) || [0])[0]);
+    const region = document.querySelector(".player-selected");
+    if (!region) return null;
+    const name = txt(region, ".playerinfo__playername").trim();
+    const pos = normPos(txt(region, ".playerinfo__playerpos"));
+    const bid = Number((txt(region, ".current-amount").match(/\$\s*(\d+)/i) || [0, 0])[1]);
     return name ? { name, pos, bid } : null;
   }
 
-  // ── GUESS: whose turn it is to nominate ──────────────────────────────
+  // ── whose turn it is to nominate: the highlighted pick-train entry ──
   function readNominator() {
-    const el = document.querySelector('[class*="on-the-clock"], [class*="nominating"]');
-    return el ? el.textContent.trim() : "";
+    const el = document.querySelector(".auction-pick-component--selecting .team-name");
+    return el ? el.textContent.replace(/^\d+\.\s*/, "").trim() : "";
   }
 
   // ── recording sales ──────────────────────────────────────────────────
@@ -180,7 +178,7 @@
 
   // ── loop ─────────────────────────────────────────────────────────────
   let dirty = true;
-  new MutationObserver(() => { dirty = true; }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+  new MutationObserver((muts) => { if (muts.some((m) => !(m.target.closest && m.target.closest("#ab-side")))) dirty = true; }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 
   async function refreshAdvice(block) {
     // One request per block name, at a time; a failed fetch is retried on
@@ -209,6 +207,7 @@
     else note(r.data.error);
   }
 
+  window.__ab = { readPicks, readBlock, readNominator, log, pending, done, get view() { return view; } };
   setInterval(tick, TICK_MS);
   setInterval(refreshView, VIEW_MS);
   refreshView();

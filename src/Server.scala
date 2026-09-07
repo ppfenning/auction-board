@@ -49,6 +49,23 @@ object Server extends cask.MainRoutes:
   override def port: Int = current.port
   override def host: String = "0.0.0.0"
 
+  /** CORS for the sidebar userscript when it runs as page script (fetch from
+    * fantasy.espn.com) rather than under Tampermonkey's GM_xmlhttpRequest. */
+  class cors extends cask.RawDecorator:
+    def wrapFunction(ctx: cask.Request, delegate: Delegate) =
+      delegate(ctx, Map()).map(r => r.copy(headers = r.headers ++ Seq("Access-Control-Allow-Origin" -> "*")))
+  override def decorators = Seq(new cors())
+
+  /** CORS preflight. Cask answers an OPTIONS on a known path with 405, so
+    * that hook is where the preflight lives; a real 405 never happens here. */
+  override def handleMethodNotAllowed(request: cask.Request): cask.Response.Raw =
+    cask.Response("", headers = Seq(
+      "Access-Control-Allow-Origin" -> "*",
+      "Access-Control-Allow-Methods" -> "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers" -> "content-type",
+      "Access-Control-Max-Age" -> "86400",
+    ))
+
   /** Write `state` to a freshly created temp file beside `path`, then rename
     * it over `path`. `Files.createTempFile` hands back a name unique to this
     * call, so two concurrent saves never race for the same temp file; the
