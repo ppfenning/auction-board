@@ -45,7 +45,7 @@
 
   // ── the completed sales, oldest first (the Activity feed, 2026 room) ──
   // Each pick is a <li> under ul.pa3 with .playerinfo__playername /
-  // .playerinfo__playerpos and a .pick-info of "$43 - Gang Green".
+  // .playerinfo__playerpos and a .pick-info of "$43 - Team Name".
   function readPicks() {
     return Array.from(document.querySelectorAll("ul.pa3 > li")).filter((li) => li.querySelector(".playerinfo__playername")).map((li) => {
       const name = txt(li, ".playerinfo__playername").trim();

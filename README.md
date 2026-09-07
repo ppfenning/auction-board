@@ -58,3 +58,24 @@ A Claude Code session with Claude in Chrome can watch the draft room and
 post each sale to the board by its ESPN label; see docs/live-sync.md.
 Routes: `GET /api/match?name=...`, `POST /api/sell-by-name`,
 `POST /api/sell-unlisted`. Team names on the board must match ESPN's.
+
+## Built with Coxswain
+
+Most of this repository was written by a crew of agents under
+[Coxswain](https://github.com/ppfenning/coxswain), which files a change as a
+work item, plans it, builds it in a worktree under a budget, has two
+independent reviewers argue over it, arbitrates, and checks the result
+against this project's own tests before handing back a pull request.
+
+The core landed as two epics on phase branches: `1-core` (the model,
+pricing, draft transitions, nominations) and `2-edge` (the Cask server and
+the page). The git history keeps that honest — several merges are marked
+"by hand", because a run had approved a merge and then not performed it, or
+had quarantined a chunk over its evidence rather than its code. Every one
+of those is a real limitation of the loop on the day, not a rewrite of what
+happened.
+
+The parts written by hand, at the keyboard and on draft night: the values
+sheet and its tags, the strategy, and the live-sync selectors in
+`tools/`, which could only be fixed against the real ESPN room while the
+draft was running.
